@@ -1,23 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <headbox></headbox> 
     <router-view/>
   </div>
 </template>
 
 <script>
+import headbox from './components/headbox'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{headbox}
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+body{width:100%;height:100%;background-color:#00800012;}
 </style>
