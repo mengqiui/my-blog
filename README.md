@@ -1,6 +1,6 @@
-# vueblog
+# 秋实的博客
 
-> about myself
+> 记录自己的酸甜苦辣，探讨前端各种技术。
 
 ## Build Setup
 
