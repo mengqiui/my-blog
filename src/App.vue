@@ -13,6 +13,4 @@ export default {
 }
 </script>
 
-<style>
-body{width:100%;height:100%;background-color:#00800012;}
-</style>
+<style></style>
