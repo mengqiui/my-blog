@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <headbox></headbox> 
+    <headbox></headbox>
     <router-view/>
   </div>
 </template>
@@ -9,7 +9,7 @@
 import headbox from './components/headbox'
 export default {
   name: 'App',
-  components:{headbox}
+  components: {headbox}
 }
 </script>
 

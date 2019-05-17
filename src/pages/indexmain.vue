@@ -9,7 +9,7 @@ export default {
   name: 'indexmain',
   data () {
     return {
-      msg: '我是首页主体文件'
+      msg: '首页主体文件'
     }
   }
 }
