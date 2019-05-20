@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import indexmain from '@/views/indexmain'
+import indexmain from '@/views/index'
 
 Vue.use(Router)
 

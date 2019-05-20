@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import headbox from './components/headbox'
+import headbox from './components/header'
 export default {
   name: 'App',
   components: {headbox}
