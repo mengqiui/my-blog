@@ -1,31 +1,38 @@
 <template>
-    <el-row class="container">
-      <el-col :span="24">
-        <el-col :span="6">
-          <div class="logo-block">
-            <a href="/"><img src="../../static/img/logo.png" /></a>
-          </div>
-        </el-col>
-        <el-col :span="18">
-          <el-menu class="el-menu-demo" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
-            <el-menu-item index="1">首页</el-menu-item>
-            <el-menu-item index="2">文档</el-menu-item>
-            <el-menu-item index="3">作品</el-menu-item>
-            <el-menu-item index="4">生活</el-menu-item>
-            <el-menu-item index="5">相册</el-menu-item>
-            <el-submenu index="6">
-              <template slot="title">秋世界</template>
-              <el-menu-item index="6-1">后台入口</el-menu-item>
-              <el-menu-item index="6-2">退出</el-menu-item>
-            </el-submenu>
-          </el-menu> 
-        </el-col>
+    <el-row class="container topnav" :gutter="20">
+      <el-col :offset="2">
+        <el-menu class="el-menu-demo" router :default-active="$router.path" @select="handleSelect" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
+          <el-menu-item index="1">
+            <el-image style="width: 55px; height: 50px" :src="url"></el-image>
+          </el-menu-item>
+          <el-menu-item index="/">首页</el-menu-item>
+          <el-menu-item index="/document">文档</el-menu-item>
+          <el-menu-item index="/product">作品</el-menu-item>
+          <el-menu-item index="/life">生活</el-menu-item>
+          <el-menu-item index="/photo">相册</el-menu-item>
+          <el-submenu index="7">
+            <template slot="title">秋世界</template>
+            <el-menu-item index="/admin">后台入口</el-menu-item>
+            <el-menu-item index="7-2">退出</el-menu-item>
+          </el-submenu>
+        </el-menu> 
       </el-col>
     </el-row>
 </template>
 
 <script>
-  
+  export default {
+    data() {
+      return {
+        url: '../../static/img/logo.png'
+      }
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        //console.log(key, keyPath);
+      }
+    }
+  }
 </script>
 <style lang="scss">
   @import '../assets/scss/common';

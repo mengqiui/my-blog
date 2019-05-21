@@ -6,7 +6,8 @@ import App from './App'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/base.css'
-import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
+import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
+import 'element-ui/lib/theme-chalk/display.css'
 import '../static/css/reset.css'
 
 Vue.use(ElementUi)
@@ -18,5 +19,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  render:h=>h(App)
 })
