@@ -1,5 +1,5 @@
 <template>
-    <el-row class="container topnav" :gutter="20">
+    <el-row class="topnav" :gutter="20">
       <el-col :offset="2">
         <el-menu class="el-menu-demo" router :default-active="$router.path" @select="handleSelect" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
           <el-menu-item index="1">
@@ -35,6 +35,6 @@
   }
 </script>
 <style lang="scss">
-  @import '../assets/scss/common';
+  .topnav{width:$w100;background-color:#EDE387;position: fixed;opacity:0.4;}
 </style>
 
