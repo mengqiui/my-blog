@@ -40,8 +40,15 @@ exports.cssLoaders = function (options) {
           sourceMap: options.sourceMap
         })
       })
+      if (loader === 'sass') {
+        loaders.push({
+          loader: 'sass-resources-loader',
+          options: {
+            resources: './src/assets/scss/common.scss',
+          },
+        });
+      }
     }
-
     // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
@@ -53,57 +60,14 @@ exports.cssLoaders = function (options) {
       return ['vue-style-loader'].concat(loaders)
     }
   }
-/*
- *@description: 以下部分手动添加
- *@author: Miss Q
- *@date: 2019-05-21 17:44:07
- *@version: V1.0.5
-*/
-function resolveResouce(name) {
-  return path.resolve(__dirname, '../src/assets/scss/' + name);
-}
-
-function generateSassResourceLoader() {
-  let loaders = [
-    cssLoader,
-    // 'postcss-loader',
-    {
-      loader: 'sass-loader',
-      options: {
-        indentedSyntax: true
-      }
-    },
-    {
-      loader: 'sass-resources-loader',
-      options: {
-        // it need a absolute path
-        resources: resolveResouce('common.sass')
-      }
-    }
-  ];
-  if (options.extract) {
-    return ExtractTextPlugin.extract({
-      use: loaders,
-      fallback: 'vue-style-loader'
-    })
-  } else {
-    return ['vue-style-loader'].concat(loaders)
-  }
-}
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    //sass: generateLoaders('sass', { indentedSyntax: true }),
-    // scss: generateLoaders('sass'),
-    sass: generateSassResourceLoader(),
-    scss: generateSassResourceLoader(),
+    sass: generateLoaders('sass', { indentedSyntax: true }),
+    scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

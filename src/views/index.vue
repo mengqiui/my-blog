@@ -1,19 +1,21 @@
 <template>
-  <el-main class="index-content">
+  <section class="index-content">
     <!-- fullscreen add life word start @author: Miss Q !-->
-    <div class="banner01"></div>
-  </el-main>
+    <div class="bg-index01" id="indexbg01"></div>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'indexmain',
-  data () {
-    return {
-     
+  methods: {
+    setbg: function () {
+      var bgdom = document.getElementById("indexbg01");
+      bgdom.style.backgroundColor =  'green';
     }
   }
 }
+
 </script>
 
 <style lang="scss">

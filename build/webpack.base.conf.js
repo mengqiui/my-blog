@@ -76,7 +76,23 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              // Provide path to the file with resources
+              resources: './src/assets/scss/common.scss',
+  
+              // Or array of paths
+              //resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+            },
+          },
+        ],
+        //loaders: ["style", "css", "sass"]
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,

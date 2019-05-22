@@ -34,7 +34,7 @@
     }
   }
 </script>
-<style lang="scss">
-  .topnav{width:$w100;background-color:#EDE387;position: fixed;opacity:0.4;}
+<style lang="scss" scoped >
+  .topnav{width:$w100;background-color:#EDE387;position: fixed;z-index:999;}
 </style>
 
