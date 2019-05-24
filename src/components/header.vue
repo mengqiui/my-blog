@@ -10,7 +10,6 @@
           <el-menu-item index="/product">作品</el-menu-item>
           <el-menu-item index="/life">生活</el-menu-item>
           <el-menu-item index="/photo">相册</el-menu-item>
-          <el-menu-item index="6">{{height}}</el-menu-item>
           <el-submenu index="7">
             <template slot="title">秋世界</template>
             <el-menu-item index="/admin">后台入口</el-menu-item>
@@ -25,8 +24,7 @@
   export default {
     data() {
       return {
-        url: '../../static/img/logo.png',
-        height:document.getElementById("headertop").offsetHeight
+        url: '../../static/img/logo.png'
       }
     },
     methods: {

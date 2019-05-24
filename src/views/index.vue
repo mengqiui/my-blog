@@ -1,21 +1,29 @@
 <template>
   <section class="index-content">
-    <el-row :gutter="20">
-      <el-col :span="24" :offset="2">
-        <!-- fullscreen add life word start @author: Miss Q !-->
-        <div class="bg-index01" id="indexbg01"><svgbg></svgbg></div>
-      </el-col>
-    </el-row>
+    <!-- fullscreen add life word start @author: Miss Q !-->
+    <div class="bg-index01" id="indexbg01"><svgbg></svgbg></div>
   </section>
 </template>
 
 <script>
+//https://blog.csdn.net/daaikuaichuan/article/details/75204274
+ import svgbg from '../components/svgbg';
 export default {
   name: 'indexmain',
   methods: {
-   
+   setbg: function () {
+      var bgdom = document.getElementById("indexbg01");
+      
+      bgdom.style.width =  window.innerWidth+'px';
+      bgdom.style.height =  (window.innerHeight)+'px';
+
+    }
   },
-  components:{svgbg:require('../components/svgbg').default}
+  mounted: function () {
+    this.setbg();
+    
+  },
+  components:{svgbg,props:[],template:'<text x="20" y="90" transform="rotate(20 10,20)" v-for="item in items">{{item}}</text>'}
 }
 
 </script>
