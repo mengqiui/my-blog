@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <script><![CDATA[
+
+  function showmsg() { alert("you had clicked the green rect"); }
+  ]]></script>
+
+  <text x="20" y="40" transform="rotate(60 10,20)"  onclick="showmsg()" >function</text>
+  <text x="60" y="100" transform="rotate(30 20,30)">Hello World</text>
+  <text x="120" y="80" transform="rotate(100 40,90)">componets</text>
+  <text x="80" y="50" transform="rotate(-50 20,-40)">kity</text>
+  <polyline points="23,329 90,328 63,413" fill="none" stroke="black" />
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>

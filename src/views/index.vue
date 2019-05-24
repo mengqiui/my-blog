@@ -1,7 +1,11 @@
 <template>
   <section class="index-content">
-    <!-- fullscreen add life word start @author: Miss Q !-->
-    <div class="bg-index01" id="indexbg01"></div>
+    <el-row :gutter="20">
+      <el-col :span="24" :offset="2">
+        <!-- fullscreen add life word start @author: Miss Q !-->
+        <div class="bg-index01" id="indexbg01"><svgbg></svgbg></div>
+      </el-col>
+    </el-row>
   </section>
 </template>
 
@@ -9,11 +13,9 @@
 export default {
   name: 'indexmain',
   methods: {
-    setbg: function () {
-      var bgdom = document.getElementById("indexbg01");
-      bgdom.style.backgroundColor =  'green';
-    }
-  }
+   
+  },
+  components:{svgbg:require('../components/svgbg').default}
 }
 
 </script>

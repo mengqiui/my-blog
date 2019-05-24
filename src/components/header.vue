@@ -1,5 +1,5 @@
 <template>
-    <el-row class="topnav" :gutter="20">
+    <el-row class="topnav" :gutter="20" id="headertop">
       <el-col :offset="2">
         <el-menu class="el-menu-demo" router :default-active="$router.path" @select="handleSelect" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
           <el-menu-item index="1">
@@ -10,6 +10,7 @@
           <el-menu-item index="/product">作品</el-menu-item>
           <el-menu-item index="/life">生活</el-menu-item>
           <el-menu-item index="/photo">相册</el-menu-item>
+          <el-menu-item index="6">{{height}}</el-menu-item>
           <el-submenu index="7">
             <template slot="title">秋世界</template>
             <el-menu-item index="/admin">后台入口</el-menu-item>
@@ -24,7 +25,8 @@
   export default {
     data() {
       return {
-        url: '../../static/img/logo.png'
+        url: '../../static/img/logo.png',
+        height:document.getElementById("headertop").offsetHeight
       }
     },
     methods: {
@@ -33,6 +35,7 @@
       }
     }
   }
+  //console.log(document.getElementById("headertop").offsetHeight)
 </script>
 <style lang="scss" scoped >
   .topnav{width:$w100;background-color:#EDE387;position: fixed;z-index:999;}
