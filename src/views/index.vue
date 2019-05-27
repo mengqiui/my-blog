@@ -7,13 +7,12 @@
 
 <script>
 //https://blog.csdn.net/daaikuaichuan/article/details/75204274
- import svgbg from '../components/svgbg';
+import svgbg from '../components/svgbg';
 export default {
   name: 'indexmain',
   methods: {
    setbg: function () {
       var bgdom = document.getElementById("indexbg01");
-      
       bgdom.style.width =  window.innerWidth+'px';
       bgdom.style.height =  (window.innerHeight)+'px';
 
@@ -23,7 +22,7 @@ export default {
     this.setbg();
     
   },
-  components:{svgbg,props:[],template:'<text x="20" y="90" transform="rotate(20 10,20)" v-for="item in items">{{item}}</text>'}
+  components:{svgbg: svgbg}
 }
 
 </script>
