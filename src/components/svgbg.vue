@@ -1,7 +1,9 @@
 <template>
   <svg id="mysvg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" >
-    <text :x='item.posX' :y='item.posY' v-for="item in svglist">{{item.text}}</text>
-    <polyline points="23,329 90,328 63,413" fill="none" stroke="black" />
+    <text :x='item.posX' :y='item.posY' :id="'text'+item.index" :key=" item.index " 
+    @mouseover="textAnimate('text'+item.index)"  v-for=" item in svglist ">{{ item.text }}</text>
+
+    
   </svg>
 </template>
 
@@ -11,35 +13,64 @@ export default {
   data: function(){
     return {
       svglist: [
-        {"text":"Function","posX":100,"posY":80},{"text":"var","posX":110,"posY":109},{"text":"Window","posX":90,"posY":96},{"text":"Math.round","posX":160,"posY":100},
-        {"text":"style","posX":200,"posY":20},{"text":"Background","posX":20,"posY":30},{"text":"width","posX":20,"posY":30},{"text":"Height","posX":20,"posY":30},
-        {"text":"Methods","posX":20,"posY":30},{"text":"random","posX":20,"posY":30},{"text":"angular","posX":20,"posY":30},{"text":"float","posX":20,"posY":30},
-        {"text":"border","posX":20,"posY":30},{"text":"css","posX":20,"posY":30},{"text":"javascript","posX":20,"posY":30},{"text":"php","posX":20,"posY":30},
-        {"text":"Vue","posX":20,"posY":30},{"text":"react","posX":20,"posY":30},{"text":"install","posX":20,"posY":30},{"text":"flower","posX":20,"posY":30},
-        {"text":"Header","posX":20,"posY":30},{"text":"select","posX":20,"posY":30},{"text":"input","posX":20,"posY":30},{"text":"node","posX":20,"posY":30},
-        {"text":"Lovely","posX":20,"posY":30},{"text":"study","posX":20,"posY":30},{"text":"Goddess","posX":20,"posY":30},{"text":"three","posX":20,"posY":30},
-        {"text":"sweet","posX":20,"posY":30},{"text":"Music","posX":20,"posY":30},{"text":"margin","posX":20,"posY":30},{"text":"Tomorrow will be better!","posX":20,"posY":30},
-        {"text":"transfrom","posX":20,"posY":30},{"text":"If(Happy){Smile}else{Cry}","posX":20,"posY":30},{"text":"'Don\'t cry","posX":20,"posY":30},
-        {"text":"Good Girl","posX":20,"posY":30},{"text":"You are not alone","posX":20,"posY":30},{"text":"GoodBye","posX":20,"posY":30},{"text":"Sunshine","posX":20,"posY":30},
-        {"text":"Strong","posX":20,"posY":30},{"text":"You will success","posX":20,"posY":20,"posY":30},{"text":"polyfill","posX":20,"posY":30},{"text":"merge","posX":20,"posY":30},
-        {"text":"Newyork","posX":20,"posY":30},{"text":"Paris","posX":20,"posY":30},{"text":"You are so beautiful","posX":20,"posY":30}
+        {"text":"Function"},{"text":"var"},{"text":"Window"},{"text":"Math.round"},{"text":"style"},{"text":"Background"},{"text":"width"},{"text":"Height"},
+        {"text":"Methods"},{"text":"random"},{"text":"angular"},{"text":"float"},{"text":"border"},{"text":"css"},{"text":"javascript"},{"text":"php"},
+        {"text":"Vue"},{"text":"react"},{"text":"install"},{"text":"flower"},{"text":"Header"},{"text":"select"},{"text":"input"},{"text":"node"},
+        {"text":"Lovely"},{"text":"study"},{"text":"Goddess"},{"text":"three"},{"text":"sweet"},{"text":"Music"},{"text":"margin"},{"text":"Tomorrow will be better!"},
+        {"text":"transfrom"},{"text":"If(Happy){Pealse smile !}"},{"text":"'Don't cry"},{"text":"Good Girl"},{"text":"You are not alone"},{"text":"GoodBye"},{"text":"Sunshine"},
+        {"text":"Strong"},{"text":"You will success"},{"text":"polyfill"},{"text":"merge"},{"text":"Newyork"},{"text":"Paris"},{"text":"You are so beautiful"},
+        {"text":"copyright"},{"text":"submit"},{"text":"placeholder"},{"text":"parseFloat"},{"text":"addEventListener"},{"text":"navigator"},{"text":"setInterval"},
+        {"text":"setTimeout"},{"text":"Easier said than done"},{"text":"Don’t take it for granted."},{"text":"Don’t let me down."},{"text":"better late than never."},
+        {"text":"go for it! just do it!"},{"text":"Experience is the mother of wisdom."},{"text":"No cross, no crown"},{"text":"Don't speek,just do it!"},
+        {"text":"别点我了！"},{"text":"小女子不才"},{"text":"未得公子青睐"},{"text":"你说我可爱不~(@^_^@)~"},{"text":"快告诉我，好玩不？"},{"text":"我走了，再见！"},
+        {"text":"Come on,girl!"},{"text":"SVG is best"},
       ]
       
     }
   },
   computed:{
     textPos:function(){
-      var randomX = Math.floor((Math.random()*500)+20);
+      var screenX = window.screen.availWidth;
+      var screenY = window.screen.availHeight;
       for(var key in this.svglist){
-        //console.log(this.svglist[key].posX,this.svglist[key].posY)
-        console.log(Math.floor((Math.random()*500)+20));
-        this.svglist[key].posX =  Math.floor((Math.random()*1800)+20);
-        this.svglist[key].posY =  Math.floor((Math.random()*800)+80);
+        this.svglist[key].index = key;
+        this.svglist[key].posX =  Math.floor((Math.random()*(screenX-100))+20);
+        this.svglist[key].posY =  Math.floor((Math.random()*(screenY-100))+60);
+        this.svglist[key].rotate = 'rotate('+Math.floor((Math.random()*80)+0)+')';
+      //console.log(this.svglist[key].rotate);
       }
     }
   },
-  mounted: function () {
+  created: function () {
     this.textPos
+  },
+  methods:{
+    setTime:function(dom,atr,val,time){setTimeout(function(){dom.setAttribute(atr,val)},time)},
+    textAnimate:function(elm){var that = this;
+      var anmatelist = {
+        "go1":function(dom){dom.setAttribute("dx","100");that.setTime(dom,"dx","",2000)},//右移100像素
+        "go2":function(dom){dom.setAttribute("dy","50");that.setTime(dom,"dy","",2000)},//左移100像素
+        "go3":function(dom){dom.setAttribute("transform","rotate(-45 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},//右移100像素
+        "go4":function(dom){dom.setAttribute("transform","rotate(20)");that.setTime(dom,"transform","",2000);},//右移100像素
+        "go5":function(dom){//参考https://www.cnblogs.com/xiaohuochai/p/7478261.html
+          cancelAnimationFrame(oTimer); oTimer =  requestAnimationFrame(frame);
+          var x = [],y = []; var domLength = dom.innerHTML.length , t = 0, oTimer = null;
+          for(var i = 0; i < domLength; i++){ x.push(2*Math.PI/domLength); }//计算X值
+          function rangeY(t){y = [];var ly = 0,cy;for(i = 0; i < domLength; i++){cy = -20*Math.sin(0.5*i+t); y.push(cy-ly);ly = cy;}}
+          function frame(){t +=0.1;rangeY(t);dom.setAttribute('dx',x.join(' '));dom.setAttribute('dy',y.join(' '));oTimer =  requestAnimationFrame(frame);}
+          setTimeout(function(){cancelAnimationFrame(oTimer);dom.setAttribute("dy","0");dom.setAttribute("dx","0")},3000)
+        },
+        "go6":function(dom){dom.setAttribute("transform","rotate(45 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},
+        "go7":function(dom){dom.setAttribute("transform","scale(2, 2) rotate(-1 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",1000);},
+        "go8":function(dom){dom.setAttribute("transform","rotate(90 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},
+        "go9":function(dom){dom.setAttribute("transform","rotate(90 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},
+      }
+      var num = Math.floor((Math.random()*(Object.keys(anmatelist).length))+1);
+      var fuc = 'go'+num;
+      anmatelist[fuc](document.getElementById(elm));
+      //anmatelist.go7(document.getElementById(elm));
+
+    }
   }
 }
 
@@ -49,5 +80,13 @@ export default {
   #mysvg{
     width: $w100;
     height: $h100;
+  }
+  #mysvg{
+    text{
+      transition: all .5s ease-in-out 0s;
+      -moz-transition: all .5s ease-in-out 0s;
+      -webkit-transition: all .5s ease-in-out 0s;
+      -o-transition: all .5s ease-in-out 0s;
+    }
   }
 </style>
