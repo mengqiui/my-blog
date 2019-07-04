@@ -1,9 +1,6 @@
 <template>
   <svg id="mysvg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" >
-    <text :x='item.posX' :y='item.posY' :id="'text'+item.index" :key=" item.index " 
-    @mouseover="textAnimate('text'+item.index)"  v-for=" item in svglist ">{{ item.text }}</text>
-
-    
+    <text :x='item.posX' :y='item.posY' :id="'text'+item.index" :key=" item.index "  @mouseover="textAnimate('text'+item.index)"  v-for=" item in svglist ">{{ item.text }}</text>
   </svg>
 </template>
 
@@ -80,8 +77,6 @@ export default {
   #mysvg{
     width: $w100;
     height: $h100;
-  }
-  #mysvg{
     text{
       transition: all .5s ease-in-out 0s;
       -moz-transition: all .5s ease-in-out 0s;

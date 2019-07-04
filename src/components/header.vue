@@ -3,7 +3,8 @@
       <el-col :offset="2">
         <el-menu class="el-menu-demo" router :default-active="$router.path" @select="handleSelect" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
           <el-menu-item index="1">
-            <el-image style="width: 55px; height: 50px" :src="url"></el-image>
+            <mylogo></mylogo>
+            <!-- <el-image style="width: 55px; height: 50px" :src="url"></el-image> -->
           </el-menu-item>
           <el-menu-item index="/">首页</el-menu-item>
           <el-menu-item index="/document">文档</el-menu-item>
@@ -21,17 +22,19 @@
 </template>
 
 <script>
+import mylogo from './mylogo';
   export default {
     data() {
       return {
-        url: '../../static/img/logo.png'
+        //url: '../../static/img/logo.png'
       }
     },
     methods: {
       handleSelect(key, keyPath) {
         //console.log(key, keyPath);
       }
-    }
+    },
+    components:{mylogo: mylogo}
   }
   //console.log(document.getElementById("headertop").offsetHeight)
 </script>
