@@ -6,12 +6,21 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    proxyTable: {
+      '/resdata': {
+       target: 'https://www.tianqiapi.com/',//设置你调用的接口域名和端口号 别忘了加http、https
+        //target: 'http://124.160.26.251:8090/',
+        
+        changeOrigin: true,//是否跨域
+        secure: true, // 允许https请求
+        pathRewrite: {
+        '^/resdata': ''//这里理解成用‘/api’代替target里面的地址
+        }
+      }
+    },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

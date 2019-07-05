@@ -9,11 +9,15 @@ import 'element-ui/lib/theme-chalk/base.css'
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 import 'element-ui/lib/theme-chalk/display.css'
 import '../static/css/reset.css'
+import axios from 'axios'
 
+//https://www.cnblogs.com/bfwbfw/p/7832614.html
 Vue.use(ElementUi)
 Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.config.productionTip = false
-
+Vue.prototype.$axios = axios
+Vue.prototype.HOST = "/resdata"
+// axios.defaults.baseURL = '/resdata'
 /* eslint-disable no-new */
 new Vue({
   el: '#app', 

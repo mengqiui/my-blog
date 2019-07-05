@@ -14,13 +14,13 @@ export default {
         {"text":"Methods"},{"text":"random"},{"text":"angular"},{"text":"float"},{"text":"border"},{"text":"css"},{"text":"javascript"},{"text":"php"},
         {"text":"Vue"},{"text":"react"},{"text":"install"},{"text":"flower"},{"text":"Header"},{"text":"select"},{"text":"input"},{"text":"node"},
         {"text":"Lovely"},{"text":"study"},{"text":"Goddess"},{"text":"three"},{"text":"sweet"},{"text":"Music"},{"text":"margin"},{"text":"Tomorrow will be better!"},
-        {"text":"transfrom"},{"text":"If(Happy){Pealse smile !}"},{"text":"'Don't cry"},{"text":"Good Girl"},{"text":"You are not alone"},{"text":"GoodBye"},{"text":"Sunshine"},
+        {"text":"transfrom"},{"text":"If(Happy){Pealse smile !}"},{"text":"Don't cry"},{"text":"Good Girl"},{"text":"You are not alone"},{"text":"GoodBye"},{"text":"Sunshine"},
         {"text":"Strong"},{"text":"You will success"},{"text":"polyfill"},{"text":"merge"},{"text":"Newyork"},{"text":"Paris"},{"text":"You are so beautiful"},
         {"text":"copyright"},{"text":"submit"},{"text":"placeholder"},{"text":"parseFloat"},{"text":"addEventListener"},{"text":"navigator"},{"text":"setInterval"},
         {"text":"setTimeout"},{"text":"Easier said than done"},{"text":"Don’t take it for granted."},{"text":"Don’t let me down."},{"text":"better late than never."},
         {"text":"go for it! just do it!"},{"text":"Experience is the mother of wisdom."},{"text":"No cross, no crown"},{"text":"Don't speek,just do it!"},
-        {"text":"别点我了！"},{"text":"小女子不才"},{"text":"未得公子青睐"},{"text":"你说我可爱不~(@^_^@)~"},{"text":"快告诉我，好玩不？"},{"text":"我走了，再见！"},
-        {"text":"Come on,girl!"},{"text":"SVG is best"},
+        {"text":"别点我了！"},{"text":"development"},{"text":"refactor"},{"text":"你说我可爱不~(@^_^@)~"},{"text":"快告诉我，好玩不？"},{"text":"我走了，再见！"},
+        {"text":"Come on,girl!"},{"text":"SVG is best"},{"text":"谁又在偷偷暗恋我⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄"},
       ]
       
     }

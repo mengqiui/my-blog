@@ -1,5 +1,13 @@
-.index-content{
+.index-bg{
   background-color:#41b883;
   opacity : 0.4;filter : alpha(opacity=40);
-
+  #indexbg01{position: fixed;}
+  .index-main{
+    position: absolute; border:1px solid #000000;
+    top:61px;width:80%;left:10%;background-color:lightblue;
+    .main-info{
+      padding:10px;text-align: center;
+      border:1px solid #41b883;
+    }
+  }
 }
