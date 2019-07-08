@@ -12,7 +12,6 @@ module.exports = {
     proxyTable: {
       '/resdata': {
        target: 'https://www.tianqiapi.com/',//设置你调用的接口域名和端口号 别忘了加http、https
-        //target: 'http://124.160.26.251:8090/',
         
         changeOrigin: true,//是否跨域
         secure: true, // 允许https请求

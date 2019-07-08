@@ -10,14 +10,20 @@ import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 import 'element-ui/lib/theme-chalk/display.css'
 import '../static/css/reset.css'
 import axios from 'axios'
+import global from './components/common.vue'
+
+
 
 //https://www.cnblogs.com/bfwbfw/p/7832614.html
 Vue.use(ElementUi)
 Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
+
 Vue.prototype.HOST = "/resdata"
-// axios.defaults.baseURL = '/resdata'
+Vue.prototype.COMMON = global
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app', 
@@ -25,4 +31,11 @@ new Vue({
   components: { App },
   template: '<App/>',
   render:h=>h(App)
+})
+
+router.beforeEach((to,from,next)=>{
+  if(to.meta.title){
+    document.title = "秋实の博客 — "+to.meta.title;
+  }
+  next()
 })

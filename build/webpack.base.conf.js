@@ -30,10 +30,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
-  },  
-  externals: {
-    "BMap": "BMap"
-  },
+  }, 
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
