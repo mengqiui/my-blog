@@ -1,7 +1,7 @@
 <template>
   <svg id="mylogo" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" >
     <circle cx="50" cy="28" r="26" class="mygirl">
-      <animate attributeType="CSS" attributeName="fill" values="#e09ea8;#dc6779;#cc1632;#d66dbd;#6d8bd6;#000000;" dur="1s" repeatCount="indefinite"/>
+      <animate attributeType="CSS" attributeName="fill" values="#e09ea8;#dc6779;#cc1632;#d66dbd;#6d8bd6;#add8e6;" dur="1s" repeatCount="indefinite"/>
     </circle>
     <defs>
       <g id="eyebox">
