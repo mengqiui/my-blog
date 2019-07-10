@@ -7,10 +7,10 @@
             <!-- <el-image style="width: 55px; height: 50px" :src="url"></el-image> -->
           </el-menu-item>
           <el-menu-item index="/">首页</el-menu-item>
-          <el-menu-item index="/document">文档</el-menu-item>
           <el-menu-item index="/product">作品</el-menu-item>
           <el-menu-item index="/life">生活</el-menu-item>
           <el-menu-item index="/photo">相册</el-menu-item>
+          <el-menu-item index="/document">留言</el-menu-item>
           <el-submenu index="7">
             <template slot="title">秋世界</template>
             <el-menu-item index="/admin">后台入口</el-menu-item>

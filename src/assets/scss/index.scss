@@ -1,27 +1,26 @@
 .index-bg{
   background-color:#41b88361;color:$fc666;
-  // opacity : 0.4;filter : alpha(opacity=40);
   #indexbg01{position: $postFix;}
-  .index-main{
-    position: absolute; top:61px;width:80%;left:10%;background-color:lightblue;
-    .el-card{border:none;background-color: transparent;}
-    .el-card__body{border: 2px dashed #add8e6;padding: 10px;border-radius: 5px; background: linear-gradient(#ede387, #6ac1dc) padding-box, repeating-linear-gradient(-45deg, #b7a81c 0, #55a1b9 0.25em, #58a3bb 0, #caa1b8 0.75em);}
-
-    .main-info{
-      padding:10px;text-align: center;width:400px !important;background-color: #ffffff38;
+  .index-main{position: absolute; top:61px;width:80%;left:10%;background-color:lightblue;
+    // 滚动公告
+    .notice-item{border:none;background-color: transparent;
+      .el-card__body{border: 2px dashed #add8e6;padding:10px;border-radius: 5px;height:20px;position: $postRela;
+        background: linear-gradient(#ede387, #6ac1dc) padding-box, repeating-linear-gradient(-45deg, #b7a81c 0, #55a1b9 0.25em, #58a3bb 0, #caa1b8 0.75em);
+        i{font-size:16px;}
+      }
+      .marquee_top {transition: all .5s;-moz-transition: all .5s; -webkit-transition: all .5s;-o-transition: all .5s; margin-top:-30px;}
+      .notice-text{left:4%;top: 3px;position: $postAsol;
+        li{height:30px;line-height: 30px;}
+      }
+    }
+    // 天气预报
+    .main-info{padding:10px;text-align: center;width:400px !important;background-color: #ffffff38;
       .Infobottom .top,.Infobottom .mid{border-color:#e8c010;}
       .Infobottom .top span{padding: 4px 7px 4px 5px;}
     }
-    .el-icon-alarm-clock{font-size:16px;}
-    .notice-text{
-      padding-left:1%;width:500px;height: 12px;display: inline-block;overflow: hidden;
-      transition: all .5s ease-in-out 0s;
-      -moz-transition: all .5s ease-in-out 0s; 
-      -webkit-transition: all .5s ease-in-out 0s;
-      -o-transition: all .5s ease-in-out 0s;
-      strong{
-        display: block;
-      }
+    .el-divider__text{background-color: #add8e6;padding:0 10px;}
+    .index-main-content{margin:10px 0;background-color:transparent;
+      .content-item{}
     }
   }
 }
