@@ -1,10 +1,11 @@
-.index-bg{
-  background-color:#41b88361;color:$fc666;
+.index-bg{background-color:#41b88361;color:$fc666;
+  // 首页全局重置 卡片 样式
+  .el-card{background-color: transparent;.el-card__body{padding:10px;}}
   #indexbg01{position: $postFix;}
   .index-main{position: absolute; top:61px;width:80%;left:10%;background-color:lightblue;
     // 滚动公告
     .notice-item{border:none;background-color: transparent;
-      .el-card__body{border: 2px dashed #add8e6;padding:10px;border-radius: 5px;height:20px;position: $postRela;
+      .el-card__body{border: 2px dashed #add8e6;border-radius: 5px;height:20px;position: $postRela;
         background: linear-gradient(#ede387, #6ac1dc) padding-box, repeating-linear-gradient(-45deg, #b7a81c 0, #55a1b9 0.25em, #58a3bb 0, #caa1b8 0.75em);
         i{font-size:16px;}
       }
@@ -14,13 +15,37 @@
       }
     }
     // 天气预报
-    .main-info{padding:10px;text-align: center;width:400px !important;background-color: #ffffff38;
+    .main-info{padding:10px;text-align: center;background-color: #ffffff38;border:none;border-radius:0;padding:10px;
       .Infobottom .top,.Infobottom .mid{border-color:#e8c010;}
       .Infobottom .top span{padding: 4px 7px 4px 5px;}
+      #weather div ul li:last-child{overflow: hidden;}
     }
     .el-divider__text{background-color: #add8e6;padding:0 10px;}
-    .index-main-content{margin:10px 0;background-color:transparent;
-      .content-item{}
+    
+    //内容区域
+    .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);padding:10px;
+      .index-content-middle{width:80%;margin:20px auto;
+        .content-item{margin:20px 0;
+          .el-card{.el-card__body{padding:0;}}
+          .item-box{height:160px;
+            .imgfill{width:50%;vertical-align: top;overflow: hidden;}
+            .imgfill img{transition: all .5s;opacity:.8;}
+            .imgfill img:hover{transform:scale(1.1);opacity:1;}
+            .textlist{width:48%;display: inline-block;margin:10px 5px;line-height:25px;
+              .texttitle{height:92px;
+                h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
+                a{-webkit-line-clamp:2;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;}
+                a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
+                a:hover,a:active,h4:hover,h4:active{color:#333;}
+              }
+              div{span{margin:5px 8px 5px 0;cursor: pointer;}}
+              .infobox{color:$fcmain;.el-icon-time{margin-right:5px;}span{margin-right:20px;}}
+            }
+          }
+        }
+        
+      }
     }
+
   }
 }
