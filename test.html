@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3实现折角效果</title>
+    <style>
+      .image-layer {
+          width: 384px;
+          height: 240px;
+          margin: 40px auto 0;
+          position: relative;background-color: blueviolet;
+          cursor: pointer;
+          overflow: hidden;
+      }
+
+      .image-layer:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: 0px solid;
+          border-color: rgba(0, 0, 0, 0.2) #fff;
+          -webkit-transition: border .5s ease; 
+      }
+
+      .image-layer:hover:before {
+          border-right-width: 80px;
+          border-bottom-width: 80px
+      }
+    </style>
+</head>
+<body>
+    <!-- <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script> -->
+    <script color="0,0,255" opacity='0.7' zIndex="-2" count="200" src="https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.4/canvas-nest.js" integrity="sha256-iZnFA92Gx1qFOTDxnkBzOVPv56EIpU3F4L5k/R5KbX8=" crossorigin="anonymous"></script>
+  <div class="image-layer" id="image-layer">
+    <!-- <img src="static/img/logo.png" /> -->
+  </div>
+</body>
+</html>

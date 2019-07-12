@@ -1,7 +1,7 @@
-.index-bg{background-color:#41b88361;color:$fc666;
+.index-bg{height:100%;
   // 首页全局重置 卡片 样式
   .el-card{background-color: transparent;.el-card__body{padding:10px;}}
-  #indexbg01{position: $postFix;}
+  .bg-index01{position: $postFix;background-color:#41b88361;color:$fc666;width: 100%;height:100%;}
   .index-main{position: absolute; top:61px;width:80%;left:10%;background-color:lightblue;
     // 滚动公告
     .notice-item{border:none;background-color: transparent;
@@ -15,37 +15,59 @@
       }
     }
     // 天气预报
-    .main-info{padding:10px;text-align: center;background-color: #ffffff38;border:none;border-radius:0;padding:10px;
+    .main-info{padding:0;text-align: center;background-color: #ffffff38;border:none;border-radius:0;padding:10px;color:$fcmain;
       .Infobottom .top,.Infobottom .mid{border-color:#e8c010;}
       .Infobottom .top span{padding: 4px 7px 4px 5px;}
       #weather div ul li:last-child{overflow: hidden;}
-    }
-    .el-divider__text{background-color: #add8e6;padding:0 10px;}
-    
+      .blog-intro{margin-top: 20px;background-color: #d4dc96cf;
+      
+      }
+    }    
     //内容区域
     .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);padding:10px;
       .index-content-middle{width:80%;margin:20px auto;
-        .content-item{margin:20px 0;
-          .el-card{.el-card__body{padding:0;}}
-          .item-box{height:160px;
+        .content-item{margin:40px 0;
+          .el-card{position: $postRela;.el-card__body{padding:0;}}
+          .el-card:hover{.imgfill img{transform:scale(1.1);opacity:1;}}
+          .textright:hover:before {border-right-width:$angleSize;border-top-width:$angleSize;}
+          .textright:before {@include border-angle();right: 0; bottom: 0;border-color: rgba(124, 208, 170, 0.39) #fff9;}
+          .textleft:hover:before {border-right-width:$angleSize;border-bottom-width:$angleSize;}
+          .textleft:before {@include border-angle();left: 0;bottom: 0;border-color:#fff9 rgba(183, 193, 104, 0.78);}
+          .item-box{height:220px;
             .imgfill{width:50%;vertical-align: top;overflow: hidden;}
             .imgfill img{transition: all .5s;opacity:.8;}
-            .imgfill img:hover{transform:scale(1.1);opacity:1;}
-            .textlist{width:48%;display: inline-block;margin:10px 5px;line-height:25px;
-              .texttitle{height:92px;
+            .textlist{width:48%;display: inline-block;margin:40px 6px;line-height:25px;
+              .texttitle{
                 h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
-                a{-webkit-line-clamp:2;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;}
+                a{-webkit-line-clamp:3;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;}
                 a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
                 a:hover,a:active,h4:hover,h4:active{color:#333;}
               }
-              div{span{margin:5px 8px 5px 0;cursor: pointer;}}
-              .infobox{color:$fcmain;.el-icon-time{margin-right:5px;}span{margin-right:20px;}}
             }
           }
         }
-        
+        .grid{overflow:auto;display:flex;align-items:baseline;margin-left:auto;margin-right:auto;
+          figure{position: relative;overflow: hidden;background: #3085a3;text-align: center;cursor: pointer;margin-left: 10px;margin-right: 10px;
+            img{position: relative;display: block;min-height: 100%;max-width: 100%;opacity: 0.8;height:210px;-webkit-transition: all 0.5s, -webkit-transform 0.5s;transition: opacity 0.5s, transform 0.5s;}
+            figcaption{position: absolute;top: 0;left:15%;color:$fcmain;text-transform: uppercase;-webkit-transition: all 0.5s;transition:all 0.5s;opacity:0;
+              h2{word-spacing: -0.15em;-webkit-transition: all 0.5s;transition:all 0.5s;
+                font: {weight:400;size:18px;}
+              }
+            }
+
+          }
+          .effect-box{background: linear-gradient(-45deg, #d4dc96 0%, #add8e6 100%);
+            &:hover{
+              img{opacity: 0.1;-webkit-transform: scale3d(2, 2, 1);transform: scale3d(2, 2, 1);}
+              figcaption{top:35%;opacity:1;
+                h2{padding:20px;border:$border1 solid $fcmain;-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);}
+              }
+            }
+          }
+        }
       }
     }
+
 
   }
 }

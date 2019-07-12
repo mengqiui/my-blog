@@ -6,3 +6,19 @@ $fcmain:#56595f;
 $postRela:relative;
 $postAsol:absolute;
 $postFix:fixed;
+$angleSize:60px;
+
+
+
+// 折角效果样式公用部分
+/*用法示例：
+.textleft:hover:before {border-right-width: 35px;border-bottom-width: 35px;}
+.textleft:before {@include border-angle();left: 0;bottom: 0;border-color:#fff9 rgba(183, 193, 104, 0.78);}
+*/
+@mixin border-angle() {
+  content: '';
+  position: absolute;
+  border: 0px solid;
+  -webkit-transition: border .5s ease;
+}
+

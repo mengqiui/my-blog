@@ -77,6 +77,7 @@ export default {
   #mysvg{
     width: $w100;
     height: $h100;
+    fill:red;
     text{
       fill:#9a9a9ac2;
       transition: all .5s ease-in-out 0s;
