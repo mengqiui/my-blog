@@ -54,7 +54,7 @@
           }
         }
         .grid{overflow:auto;display:flex;align-items:baseline;margin-left:auto;margin-right:auto;margin-bottom:20px;
-          figure{position: relative;overflow: hidden;background: #3085a3;text-align: center;cursor: pointer;margin-left: 10px;margin-right: 10px;
+          figure{position: relative;overflow: hidden;background: #3085a3;text-align: center;cursor: pointer;
             img{position: relative;display: block;min-height: 100%;max-width: 100%;opacity: 0.8;height:210px;-webkit-transition: all 0.5s, -webkit-transform 0.5s;transition: opacity 0.5s, transform 0.5s;}
             figcaption{position: absolute;top: 0;left:15%;color:$fcmain;text-transform: uppercase;-webkit-transition: all 0.5s;transition:all 0.5s;opacity:0;
               h2{word-spacing: -0.15em;-webkit-transition: all 0.5s;transition:all 0.5s;
