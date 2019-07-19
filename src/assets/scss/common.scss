@@ -11,6 +11,7 @@ $angleSize:60px;
 
 
 // 折角效果样式公用部分
+//https://www.jianshu.com/p/a99764ff3c41
 /*用法示例：
 .textleft:hover:before {border-right-width: 35px;border-bottom-width: 35px;}
 .textleft:before {@include border-angle();left: 0;bottom: 0;border-color:#fff9 rgba(183, 193, 104, 0.78);}
@@ -22,3 +23,11 @@ $angleSize:60px;
   -webkit-transition: border .5s ease;
 }
 
+
+
+// xs	<768px 响应式栅格数或者栅格属性对象	number/object (例如： {span: 4, offset: 4})	—	—
+// sm	≥768px 响应式栅格数或者栅格属性对象	number/object (例如： {span: 4, offset: 4})	—	—
+// md	≥992px 响应式栅格数或者栅格属性对象	number/object (例如： {span: 4, offset: 4})	—	—
+// lg	≥1200px 响应式栅格数或者栅格属性对象	number/object (例如： {span: 4, offset: 4})	—	—
+// xl	≥1920px 响应式栅格数或者栅格属性对象	number/object (例如： {span: 4, offset: 4})	—	—
+// tag	自定义元素标签	string	*	div

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import indexmain from '@/views/index'
+import indexmain from '@/views/index/index.vue'
 import document from '@/views/document'
 import product from '@/views/product'
 import life from '@/views/life'

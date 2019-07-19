@@ -1,0 +1,251 @@
+.index-bg{height:100%;
+  // 首页全局重置 卡片 样式
+  .el-card{background-color: transparent;.el-card__body{padding:10px;}}
+  .bg-index01{position: $postFix;background-color:#41b88361;color:$fc666;width: 100%;height:100%;}
+  .index-main{position: absolute; top:61px;width:80%;left:10%;background-color:lightblue;
+    // 滚动公告
+    .notice-item{border:none;background-color: transparent;
+      .el-card__body{border: 2px dashed #add8e6;border-radius: 5px;height:20px;position: $postRela;
+        background: linear-gradient(#ede387, #6ac1dc) padding-box, repeating-linear-gradient(-45deg, #b7a81c 0, #55a1b9 0.25em, #58a3bb 0, #caa1b8 0.75em);
+        i{font-size:16px;}
+      }
+      .marquee_top {transition: all .5s;-moz-transition: all .5s; -webkit-transition: all .5s;-o-transition: all .5s; margin-top:-30px;}
+      .notice-text{left:4%;top: 3px;position: $postAsol;
+        li{height:30px;line-height: 30px;}
+      }
+    }
+    // 天气预报
+    .el-aside{
+      .main-info{padding:0;text-align: center;background-color: #ffffff38;border:none;border-radius:0;padding:10px;color:$fcmain;
+        .Infobottom .top,.Infobottom .mid{border-color:#e8c010;}
+        .Infobottom .top span{padding: 4px 7px 4px 5px;}
+        #weather div ul li:last-child{overflow: hidden;}
+        .blog-intro{margin-top: 20px;background-color: #d4dc96cf;
+        
+        }
+      } 
+    }   
+    //内容区域
+    .index-content{//background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);
+      padding:10px;
+      .index-content-middle{width:80%;margin:20px auto;
+        .content-item{margin:40px 0;
+          .el-card{position: $postRela;.el-card__body{padding:0;}}
+          .el-card:hover{.imgfill img{transform:scale(1.1);opacity:1;}}
+          .textright:hover:before {border-right-width:$angleSize;border-top-width:$angleSize;}
+          .textright:before {@include border-angle();right: 0; bottom: 0;border-color: rgba(124, 208, 170, 0.39) #fff9;}
+          .textleft:hover:before {border-right-width:$angleSize;border-bottom-width:$angleSize;}
+          .textleft:before {@include border-angle();left: 0;bottom: 0;border-color:#fff9 rgba(183, 193, 104, 0.78);}
+          .item-box{//height:220px;
+            .imgfill{/*width:50%;*/vertical-align: top;overflow: hidden;
+              img{transition: all .5s;opacity:.8;
+                // height:255px;
+              }}
+            .textlist{
+              // width:48%;
+              display: inline-block;padding:20px 5px;line-height:25px;
+              .texttitle{
+                h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
+                a{-webkit-line-clamp:3;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;}
+                a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
+                a:hover,a:active,h4:hover,h4:active{color:#333;}
+              }
+            }
+          }
+        }
+        .grid{overflow:auto;display:flex;align-items:baseline;margin-left:auto;margin-right:auto;margin-bottom:20px;
+          figure{position: relative;overflow: hidden;background: #3085a3;text-align: center;cursor: pointer;margin-left: 10px;margin-right: 10px;
+            img{position: relative;display: block;min-height: 100%;max-width: 100%;opacity: 0.8;height:210px;-webkit-transition: all 0.5s, -webkit-transform 0.5s;transition: opacity 0.5s, transform 0.5s;}
+            figcaption{position: absolute;top: 0;left:15%;color:$fcmain;text-transform: uppercase;-webkit-transition: all 0.5s;transition:all 0.5s;opacity:0;
+              h2{word-spacing: -0.15em;-webkit-transition: all 0.5s;transition:all 0.5s;
+                font: {weight:400;size:18px;}
+              }
+            }
+
+          }
+          .effect-box{background: linear-gradient(-45deg, #d4dc96 0%, #add8e6 100%);
+            &:hover{
+              img{opacity: 0.1;-webkit-transform: scale3d(2, 2, 1);transform: scale3d(2, 2, 1);}
+              figcaption{top:35%;opacity:1;
+                h2{padding:20px;border:$border1 solid $fcmain;-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);}
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+
+/*屏幕分辨率为小于1280px*/
+@media screen and (max-width:1279px){
+  .index-bg{
+    .index-main{
+      .notice-item{
+        .notice-text{
+          left:6%;
+        }
+      }
+    }
+    .index-content{background:#b6e3cf;    
+      .index-content-middle{
+        .content-item{
+          .item-box{
+            .imgfill{width:100%;
+              img{height:230px;width:100%;}
+            }
+            .textlist{
+              width:100%;
+            }
+          }
+        }
+      }
+    }
+    .el-aside{width: 200px !important;padding:20px 20px 0 0;
+      .main-info{
+        .Infobottom{
+          .air{display: none;}
+          .m_mid,.m_right{@extend .air;}
+          .m_left{width:100%;}
+        }
+      }
+    }
+  }
+
+}
+
+/*屏幕分辨率为小于767px时*/
+@media screen and (max-width: 767px){
+  .index-bg{
+    .index-main{
+      .index-content{
+        .index-content-middle{
+          .grid{
+            .effect-box{
+              width:$w100;.imgfill{width:$w100;img{width:$w100;}}
+            }
+          }
+        }
+      }
+      .el-aside{
+        display: none;
+      }
+    }
+  }
+  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+    .index-content-middle{
+      .content-item{
+        .item-box{
+          .imgfill{width: 50%;
+            img{height:180px;}
+          }
+          .textlist{
+            width:46%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*屏幕在480px到767之间（主要是手机屏幕）*/
+@media screen and (min-width: 480px) and (max-width:767px){
+
+}
+
+/*屏幕在768px到1023之间（小屏幕-pad）*/
+@media screen and (min-width: 768px) and (max-width:1023px){
+
+}
+
+/*屏幕在1024px到1279之间（中屏幕电脑）*/
+@media screen and (min-width: 1024px) and (max-width: 1279px){
+
+}
+
+/*屏幕大于1280px（大屏幕电脑）*/
+@media screen and (min-width: 1280px){
+  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+    .index-content-middle{
+      .content-item{
+        .item-box{
+          .imgfill{width:50%;
+            img{height:150px;}
+          }
+          .textlist{
+            width:46%;
+          }
+        }
+      }
+    }
+  }
+  .el-aside{
+    width: 350px !important;padding:20px 20px 0 0;
+  }
+}
+
+/************ 细分PC端大屏和中屏 ****************/
+
+/*最小屏幕分辨率为1280px且最大为1440px*/
+@media (max-width:1440px) and (min-width: 1280px) {
+  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+    .index-content-middle{
+      .content-item{margin:40px auto;
+        .item-box{
+          .imgfill{
+            img{height:150px;}
+          }
+          .textlist{
+            width:46%;padding:10px 5px!important;
+          }
+        }
+      }
+    }
+  }
+  .el-aside{
+    width: 350px !important;padding:20px 20px 0 0;
+  }
+}
+
+/*最小屏幕分辨率为1440px且最大为1680px*/
+@media (max-width:1680px) and (min-width: 1439px) {
+  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+    .index-content-middle{
+      .content-item{
+        .item-box{
+          .imgfill{
+            img{height:230px;}
+          }
+          .textlist{
+            width:46%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*最小屏幕分辨率为1920px*/
+@media screen and (min-width:1920px){
+  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+    .index-content-middle{
+      .content-item{
+        .item-box{
+          .imgfill{
+            img{height:230px;}
+          }
+          .textlist{
+            width:46%;
+          }
+        }
+      }
+    }
+  }
+  .el-aside{
+    width: 350px !important;padding:20px 20px 0 0;
+  }
+}
+

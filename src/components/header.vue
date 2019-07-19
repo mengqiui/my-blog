@@ -1,17 +1,26 @@
 <template>
     <el-row class="topnav" :gutter="20" id="headertop">
       <el-col :offset="2">
-        <el-menu class="el-menu-demo" router :default-active="$router.path" @select="handleSelect" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
+        <div class="pchide meanuxs">
+          <el-button class="navbar-toggle" type="info" round>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </el-button>
+        </div>
+        <el-menu class="xshide" router :default-active="$router.path" @select="handleSelect" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
+          <el-menu-item index="/" class="pchide icontoggle" >
+          </el-menu-item>
+          <el-menu-item index="/" class="pchide">欢迎来到秋实の博客！！！</el-menu-item>
           <el-menu-item index="1">
             <mylogo></mylogo>
-            <!-- <el-image style="width: 55px; height: 50px" :src="url"></el-image> -->
           </el-menu-item>
-          <el-menu-item index="/">首页</el-menu-item>
-          <el-menu-item index="/product">作品</el-menu-item>
-          <el-menu-item index="/life">生活</el-menu-item>
-          <el-menu-item index="/photo">相册</el-menu-item>
-          <el-menu-item index="/document">留言</el-menu-item>
-          <el-submenu index="7">
+          <el-menu-item index="/" class="xshide">首页</el-menu-item>
+          <el-menu-item index="/product" class="xshide">作品</el-menu-item>
+          <el-menu-item index="/life" class="xshide">生活</el-menu-item>
+          <el-menu-item index="/photo" class="xshide">相册</el-menu-item>
+          <el-menu-item index="/document" class="xshide">留言</el-menu-item>
+          <el-submenu index="7" class="xshide">
             <template slot="title">秋世界</template>
             <el-menu-item index="/admin">后台入口</el-menu-item>
             <el-menu-item index="7-2">退出</el-menu-item>
@@ -39,6 +48,23 @@ import mylogo from './mylogo';
   //console.log(document.getElementById("headertop").offsetHeight)
 </script>
 <style lang="scss" scoped >
-  .topnav{width:$w100;background-color:#EDE387;position: fixed;z-index:999;}
+  .topnav{width:$w100;background-color:#EDE387;position: fixed;z-index:999;
+    .meanuxs{position: relative;margin: 0;}
+  }
+  .pchide{display: none;}
+  .navbar-toggle {position: relative;float: right;padding: 9px 10px; margin-top: 8px;margin-right: 15px;margin-bottom: 8px;background-color: transparent;background-image: none;border: 1px solid transparent;border-radius: 4px;border-color:#fff;
+    
+    .icon-bar {display: block;width: 22px;height: 2px;border-radius: 1px;background-color: #fff;}
+  
+    .icon-bar+.icon-bar {margin-top: 4px;}
+
+  }
+
+  /*屏幕分辨率为小于767px时*/
+  @media screen and (max-width: 767px){
+    .xshide{display: none;}
+    .pchide{display: inline-block;}
+  }
+  
 </style>
 

@@ -73,7 +73,7 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   #mysvg{
     width: $w100;
     height: $h100;
