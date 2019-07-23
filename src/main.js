@@ -13,7 +13,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '../static/css/reset.css'
 
 
-
 //https://www.cnblogs.com/bfwbfw/p/7832614.html
 Vue.use(ElementUi)
 // Vue.component(CollapseTransition.name, CollapseTransition)

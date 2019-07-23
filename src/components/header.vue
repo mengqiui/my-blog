@@ -8,13 +8,11 @@
             <span class="icon-bar"></span>
           </el-button>
         </div>
-        <el-menu class="xshide" router :default-active="$router.path" @select="handleSelect" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#ffd04b">
+        <el-menu class="xshide" router :default-active="$route.path" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#47b8dc">
           <el-menu-item index="/" class="pchide icontoggle" >
           </el-menu-item>
           <el-menu-item index="/" class="pchide">欢迎来到秋实の博客！！！</el-menu-item>
-          <el-menu-item index="1">
-            <mylogo></mylogo>
-          </el-menu-item>
+          <el-menu-item><mylogo></mylogo></el-menu-item>
           <el-menu-item index="/" class="xshide">首页</el-menu-item>
           <el-menu-item index="/product" class="xshide">作品</el-menu-item>
           <el-menu-item index="/life" class="xshide">生活</el-menu-item>
@@ -35,13 +33,11 @@ import mylogo from './mylogo';
   export default {
     data() {
       return {
-        //url: '../../static/img/logo.png'
       }
     },
     methods: {
-      handleSelect(key, keyPath) {
-        //console.log(key, keyPath);
-      }
+    },
+    created:function(){
     },
     components:{mylogo: mylogo}
   }

@@ -1,4 +1,3 @@
-import svgbg from '../../components/svgbg'
 export default {
   name: 'indexmain',
   data(){
@@ -47,6 +46,5 @@ export default {
     this.weather(); this.noticeUpdate();
     this.timer=setInterval(this.noticeScroll,2000)
     
-  },
-  components:{svgbg: svgbg}
+  }
 }

@@ -8,7 +8,11 @@ $postAsol:absolute;
 $postFix:fixed;
 $angleSize:60px;
 
-
+// 页面整体模块参数
+$pagetop:81px;
+@mixin framework() {
+  position: $postRela; top:$pagetop;left:10%;width:80%;
+}
 
 // 折角效果样式公用部分
 //https://www.jianshu.com/p/a99764ff3c41
