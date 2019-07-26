@@ -19,7 +19,8 @@ Vue.use(ElementUi)
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 
-Vue.prototype.HOST = "/resdata"
+Vue.prototype.WEATHER = "/resdata"
+Vue.prototype.HOST = "/myblog"
 Vue.prototype.COMMON = global
 
 

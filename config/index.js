@@ -18,6 +18,13 @@ module.exports = {
         pathRewrite: {
         '^/resdata': ''//这里理解成用‘/api’代替target里面的地址
         }
+      },
+      '/myblog':{
+        target:'http://localhost:8889/api',
+        changeOrigin: true,//是否跨域
+        pathRewrite: {
+          '^/myblog': ''//这里理解成用‘/api’代替target里面的地址
+          }
       }
     },
     // Various Dev Server settings
