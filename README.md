@@ -23,6 +23,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 # 项目目录说明
 
-components:存放公用组件
-views:存放项目主体页面
-static:存放第三方插件，三方引入的代码，很少改动的，不必每次打包的
++ components:存放公用组件
++ views:存放项目主体页面
++ static:存放第三方插件，三方引入的代码，很少改动的，不必每次打包的
++ server:后台代码
+
