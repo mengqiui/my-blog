@@ -42,3 +42,8 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+纯属工作之余抽时间来一点点开发，到目前为止感觉设计网站是最浪费时间的了，确定下来设计方案开始码代码倒是最爽的了。
+
+
+
+
