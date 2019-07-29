@@ -19,7 +19,7 @@
 
 # 技术栈
 + 前端采用：
-vue、elementui、scss、svg...
+vue、vue-rouder、elementui、scss、svg...
 + 后台采用：
 mongoose、express
 
