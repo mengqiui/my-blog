@@ -19,9 +19,9 @@
 
 # 技术栈
 + 前端采用：
-vue elementui scss 
+vue、elementui、scss、svg...
 + 后台采用：
-mongoose express
+mongoose、express
 
 
 ## Build Setup
