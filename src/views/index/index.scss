@@ -12,8 +12,10 @@
       i{font-size:16px;}
     }
     .marquee_top {transition: all .5s;-moz-transition: all .5s; -webkit-transition: all .5s;-o-transition: all .5s; margin-top:-30px;}
-    .notice-text{left:5%;top: 3px;position: $postAsol;
-      li{height:32px;line-height: 32px;}
+    .notice-text{left:5%;top: 3px;position: $postAsol;width:80%;
+      li{height:32px;line-height: 32px;
+        span{float: $fr;}
+      }
     }
   }
   // 天气预报
@@ -90,26 +92,25 @@
   }
 }
 
-
 /*屏幕分辨率为小于1280px*/
 @media screen and (max-width:1279px){
-  .index-bg{
     .index-main{
       .notice-item{
         .notice-text{
           left:6%;
         }
       }
-    }
     .index-content{background:#b6e3cf;    
       .index-content-middle{
         .content-item{
-          .item-box{
+          .textleft:hover:before {border-right-width:$angleSize;border-top-width:$angleSize;border-bottom-width:0px;}
+          .textleft:before {@include border-angle();right: 0;left:auto; bottom: 0;border-color: rgba(124, 208, 170, 0.39) #fff9;}
+          .item-box{height:400px;
             .imgfill{width:100%;
               img{height:230px;width:100%;}
             }
             .textlist{
-              width:100%;
+              width:100%;position: absolute;top: 235px;
             }
           }
         }
@@ -125,7 +126,6 @@
       }
     }
   }
-
 }
 
 /*屏幕分辨率为小于767px时*/

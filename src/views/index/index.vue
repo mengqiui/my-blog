@@ -7,7 +7,9 @@
           <el-card shadow="hover" class="notice-item">
             <i class="el-icon-bell"></i>
             <ul class="notice-text" id="noticeBox" :class="{marquee_top:noticeanimate}" @mouseenter="mouseStop" @mouseleave="mousego">
-              <li v-for="(notice,index) in noticeList" :key="index">{{notice}}</li>
+              <li v-for="(text,index) in noticeList.notice" :key="index">
+                {{text}}<span>{{noticeList.times[index] | formatDate}}</span>
+              </li>
             </ul>
           </el-card>
         </el-col>
@@ -75,7 +77,7 @@
                   </div>
                     </el-image>
                     <figcaption>
-                      <h2>Look Life</h2>
+                      <h2>关于前端</h2>
                     </figcaption>
                   </figure>
                 </div>
@@ -89,7 +91,7 @@
                   </div>
                     </el-image>
                     <figcaption>
-                      <h2>Look Life</h2>
+                      <h2>关于后端</h2>
                     </figcaption>
                   </figure>
                 </div>
@@ -103,7 +105,7 @@
                   </div>
                     </el-image>
                     <figcaption>
-                      <h2>Look Life</h2>
+                      <h2>随心作品</h2>
                     </figcaption>
                   </figure>
                 </div>
@@ -117,7 +119,7 @@
                   </div>
                     </el-image>
                     <figcaption>
-                      <h2>Look Life</h2>
+                      <h2>生活感想</h2>
                     </figcaption>
                   </figure>
                 </div>

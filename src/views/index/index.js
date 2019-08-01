@@ -5,15 +5,17 @@ export default {
       locationCity:"正在定位···",
       locationHtml:"",
       noticeanimate:false,
-      noticeList:[],
+      noticeList:{notice:[],times:[]},
       timer:null,
+      articleList:[],
+      //noticeTime:[],
       imgSrc:["../../../static/img/index01.jpg","../../../static/img/index02.jpg",
       "../../../static/img/index03.jpg","../../../static/img/index04.jpg","../../../static/img/index05.jpg",
       "../../../static/img/index06.jpg","../../../static/img/blog-head.jpg"]
     }
   },
   methods: {
-    weather:function(){
+    weather(){
       var that = this;
       /**  https://www.cnblogs.com/zdz8207/p/vue-axios-vue-resource-proxyTable-cookie.html  https://www.tianqiapi.com/api/?version=v6&ip=124.160.26.254 https://blog.csdn.net/srttina/article/details/83309512   **/
       // https://www.tianqiapi.com/?action=v6   天气API接口文档
@@ -23,32 +25,40 @@ export default {
       }).catch(err=>{console.log(err)})
   
     },
-    noticeUpdate:function(){
+    noticeUpdate(){
       var that = this;
       this.$axios.get(this.HOST + '/getnews').then(res=>{
-        res.data.map(function(val){that.noticeList.push(val.ncontent)})
+        res.data.map((val)=> {that.noticeList.notice.push(val.ncontent);that.noticeList.times.push(val.ndate);})
         this.timer=setInterval(this.noticeScroll,2000)
       }).catch(err=>{console.log(err)})
     },
-    noticeScroll:function(){
+    articleData(){
+      var that = this;
+      this.$axios.get(this.HOST + '/getArticle').then(res=>{
+        res.data.map((val)=> val)
+        
+      }).catch(err=>{console.log(err)})
+    },
+    noticeScroll(){
       this.noticeanimate = true;
       setTimeout(()=>{
-        this.noticeList.push(this.noticeList[0]);
-        this.noticeList.shift();
+        this.noticeList.notice.push(this.noticeList.notice[0]);
+        this.noticeList.times.push(this.noticeList.times[0]);
+        this.noticeList.notice.shift();this.noticeList.times.shift();
         this.noticeanimate = false;
       },500)
     },
-    mousego:function(){
+    mousego(){
       this.timer = setInterval(this.noticeScroll,2000);
     },
-    mouseStop:function(){
+    mouseStop(){
       clearInterval(this.timer)
     }
   },
-  created:function(){
+  created(){
     this.locationCity = returnCitySN["cname"]?returnCitySN["cname"]:"浙江省杭州市";
     this.weather(); this.noticeUpdate();
-    
+    this.articleData()
     
   }
 }

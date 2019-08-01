@@ -10,22 +10,17 @@ db.on('error',function(error){
 })
 
 db.once('open',function(){
-  console.log("ok");
-
+  console.log("数据库连接ok");
 })
 
 //使用Connetion监听连接状态
 db.on('connected',function(err){
-  if(err){
-      console.log('连接数据库失败：'+err);
-  }else{
-      //console.log('连接数据库成功！');
-  }
+  if(err){console.log('连接数据库失败：'+err);}
 });
 
 const newsSchema = new Mongoose.Schema({
   ncontent:String,
-  ndate:{type:Date,default:Date.now}
+  ndate:{type:Number,default:new Date().getTime()}
 })
 
 const blogSchema = new Mongoose.Schema({
@@ -34,10 +29,10 @@ const blogSchema = new Mongoose.Schema({
   bcontent:String,//文章内容
   bimage:String,//文章中图片
   bview:Number,//文章浏览次数
-  blabel:String,//文章分类标签
+  blabel:[],//文章分类标签
   blike:Number,//文章被点赞数量
-  btime:{type:Date,default:Date.now},//文章创建时间
-  bntime:{type:Date,default:Date.now}//文章更新时间
+  bctime:{type:Number,default:new Date().getTime()},//文章创建时间
+  bntime:{type:Number,default:new Date().getTime()}//文章更新时间
 })
 
 var news = Mongoose.model('news',newsSchema)

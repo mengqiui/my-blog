@@ -11,6 +11,7 @@
 import headbox from './components/header'
 import foot from './components/footer'
 import svgbg from './components/svgbg'
+
 export default {
   name: 'App',
   components: {headbox,foot,svgbg}

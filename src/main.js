@@ -11,7 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 // import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 // import 'element-ui/lib/theme-chalk/display.css'
 import '../static/css/reset.css'
-
+import {formatDate} from './assets/js/date.js'
 
 //https://www.cnblogs.com/bfwbfw/p/7832614.html
 Vue.use(ElementUi)
@@ -31,7 +31,12 @@ new Vue({
   components: { App },
   template: '<App/>',
   render:h=>h(App)
-})
+});
+
+Vue.filter('formatDate',function(time){
+  var date = new Date(time);
+  return formatDate(date, 'yyyy-MM-dd hh:mm');
+});
 
 router.beforeEach((to,from,next)=>{
   if(to.meta.title){
