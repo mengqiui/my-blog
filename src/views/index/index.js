@@ -51,6 +51,10 @@ export default {
     },
     mouseStop(){
       clearInterval(this.timer)
+    },
+    goDetail(id){
+      this.$router.push({path:"/articleDetail",query:{articleId:id}});
+      console.log(this.$router);
     }
   },
   created(){

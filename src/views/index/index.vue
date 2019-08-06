@@ -19,7 +19,7 @@
           <!-- 该模块设计参考：http://demo.cssmoban.com/cssthemes6/tpmo_527_sided/index.html -->
           <!-- 模块居中 -->
           <div class="index-content-middle">  
-            <div class="content-item" v-for="(list,index) in articleList" :key="index">
+            <div class="content-item" v-for="(list,index) in articleList" :key="index" @click="goDetail(list._id)">
               <el-card shadow="hover" class="item-box textleft" v-if="index == 1">
                 <div class="textlist">
                   <div class="texttitle"><h4>{{list.btitle}}</h4><a href="javascript:void(0)">{{list.bcontent}}</a></div>

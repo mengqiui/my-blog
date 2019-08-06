@@ -36,12 +36,18 @@
 import mylogo from './mylogo';
   export default {
     data() {
-      return {
+      return { }
+    },
+    methods: { },
+    created(){ },
+    watch: {
+      path(){
+        console.log(this.$router);
       }
-    },
-    methods: {
-    },
-    created:function(){
+      
+      // $route() {
+      //     this.handleSelect(//要高亮的菜单index)
+      // )}
     },
     components:{mylogo: mylogo}
   }

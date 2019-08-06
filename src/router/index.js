@@ -7,22 +7,31 @@ import bili from '@/views/bili'
 import indexmain from '@/views/index/index.vue'
 import product from '@/views/product/product.vue'
 import articles from '@/views/articles/articles.vue'
+import articleDetail from '@/views/articles/articleDetail.vue'
 
 Vue.use(Router)
-
+//https://blog.csdn.net/wlangmood/article/details/78291591  vue-router路由
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'indexmain',
       component: indexmain,
-      meta:{title:'做个深呼吸，一切没什么大不了'}
+      meta:{title:'做个深呼吸，一切没什么大不了'},
+      children:{
+        path: '/articleDetail',
+        component: articleDetail
+      }
     },
     {
       path: '/articles',
       name: 'articles',
       component: articles,
-      meta:{title:'记录下对技术的感悟，解决掉的每个bug，对每个知识点的认知'}
+      meta:{title:'记录下对技术的感悟，解决掉的每个bug，对每个知识点的认知'},
+      children:{
+        path: '/articleDetail',
+        component: articleDetail
+      }
     },
     {
       path: '/bili',
