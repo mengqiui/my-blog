@@ -18,7 +18,7 @@
 5. 还在开发中，后面还会有留言板，小聊天室，以及博客后台等等。
 
 ![博客主页](static/img/vueblog-1.0.png "博客首页")
-
+![博客主页](static/img/vueblog-1.1.png "博客首页")
 # 技术栈
 + 前端采用：
 vue、vue-router、elementui、scss、svg...
