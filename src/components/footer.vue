@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">Copyright ©2019 秋实の博客 | 来了，就给博主笑一个</div>
+  <div class="footer">Copyright ©2019 秋实の博客 | 来了，就给博主留个脚印</div>
 </template>
 
 <script>

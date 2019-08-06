@@ -14,7 +14,7 @@
     .marquee_top {transition: all .5s;-moz-transition: all .5s; -webkit-transition: all .5s;-o-transition: all .5s; margin-top:-30px;}
     .notice-text{left:5%;top: 3px;position: $postAsol;width:80%;
       li{height:32px;line-height: 32px;
-        span{float: $fr;}
+        span{float: $fr;color:#676666;font-size:12px;}
       }
     }
   }

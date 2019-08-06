@@ -10,15 +10,16 @@ module.exports = function(app){
 
   //消息公告消息
   const newsData = [
-    {ncontent:'恭喜秋の博客1.0版成功上线啦~~~'},
-    {ncontent:'恭喜秋の博客1.1版成功上线啦~~~'},
-    {ncontent:'恭喜秋の博客1.2版成功上线啦~~~'},
+    {ncontent:'恭喜秋の博客1.0版成功上线啦^_^'},
+    // {ncontent:'恭喜秋の博客1.1版成功上线啦~~~'},
+    // {ncontent:'恭喜秋の博客1.2版成功上线啦~~~'},
   ]
   //https://www.jianshu.com/p/620293df6bdc
   app.get('/api/addnews',function(req,res){
     dbAPI.news.create(newsData,(err,res)=>{
       console.log('ok');
     })
+    res.send('ok')
   })
 
   app.get('/api/getnews',function(req,res){

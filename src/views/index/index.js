@@ -8,7 +8,6 @@ export default {
       noticeList:{notice:[],times:[]},
       timer:null,
       articleList:[],
-      //noticeTime:[],
       imgSrc:["../../../static/img/index01.jpg","../../../static/img/index02.jpg",
       "../../../static/img/index03.jpg","../../../static/img/index04.jpg","../../../static/img/index05.jpg",
       "../../../static/img/index06.jpg","../../../static/img/blog-head.jpg"]
@@ -35,8 +34,7 @@ export default {
     articleData(){
       var that = this;
       this.$axios.get(this.HOST + '/getArticle').then(res=>{
-        res.data.map((val)=> val)
-        
+        res.data.map((val)=> {that.articleList.push(val);})
       }).catch(err=>{console.log(err)})
     },
     noticeScroll(){

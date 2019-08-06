@@ -17,52 +17,23 @@
       <el-row :gutter="12" style="margin-top:20px" class="index-content">
         <el-col :lg="{span:22,push:1}" :md="{span:24}"><!--总背景色-->
           <!-- 该模块设计参考：http://demo.cssmoban.com/cssthemes6/tpmo_527_sided/index.html -->
-          <div class="index-content-middle">  <!-- 模块居中 -->
-              <!-- 第一块：内容 -->
-            <div class="content-item">
-              <el-card shadow="hover" class="item-box textright">
-                <el-image :src="imgSrc[0]" class="imgfill" lazy>
-                  <div slot="error" class="image-slot">
-                    <i class="el-icon-picture-outline"></i>
-                  </div>
-                </el-image>
+          <!-- 模块居中 -->
+          <div class="index-content-middle">  
+            <div class="content-item" v-for="(list,index) in articleList" :key="index">
+              <el-card shadow="hover" class="item-box textleft" v-if="index == 1">
                 <div class="textlist">
-                  <div class="texttitle">
-                    <h4>文章标题</h4>
-                    <a href="javascript:void(0)">我是文本文本文本文本，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等</a>
-                  </div>
+                  <div class="texttitle"><h4>{{list.btitle}}</h4><a href="javascript:void(0)">{{list.bcontent}}</a></div>
                 </div>
-              </el-card>
-            </div>
-              <!-- 第二块：内容 -->
-            <div class="content-item">
-              <el-card shadow="hover" class="item-box textleft">
-                <div class="textlist">
-                  <div class="texttitle">
-                    <h4>文章标题</h4>
-                    <a href="javascript:void(0)">我是文本文本文本文本，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等</a>
-                  </div>
-                </div>
-                <el-image :src="imgSrc[1]" class="imgfill" style="float:right">
-                  <div slot="error" class="image-slot">
-                    <i class="el-icon-picture-outline"></i>
-                  </div>
+                <el-image :src="list.bimage" class="imgfill" style="float:right">
+                  <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
                 </el-image>
               </el-card>
-            </div>
-              <!-- 第三块：内容 -->
-            <div class="content-item">
-              <el-card shadow="hover" class="item-box textright">
-                <el-image :src="imgSrc[0]" class="imgfill" lazy>
-                  <div slot="error" class="image-slot">
-                    <i class="el-icon-picture-outline"></i>
-                  </div>
+              <el-card shadow="hover" class="item-box textright" v-else>
+                <el-image :src="list.bimage" class="imgfill" lazy>
+                  <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
                 </el-image>
                 <div class="textlist">
-                  <div class="texttitle">
-                    <h4>文章标题</h4>
-                    <a href="javascript:void(0)">我是文本文本文本文本，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等，图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等</a>
-                  </div>
+                  <div class="texttitle"><h4>{{list.btitle}}</h4><a href="javascript:void(0)">{{list.bcontent}}</a> </div>
                 </div>
               </el-card>
             </div>

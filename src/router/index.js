@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import indexmain from '@/views/index/index.vue'
-import document from '@/views/document'
-import product from '@/views/product/product.vue'
 import life from '@/views/life'
 import photo from '@/views/photo'
 import admin from '@/views/admin'
+import bili from '@/views/bili'
+import indexmain from '@/views/index/index.vue'
+import product from '@/views/product/product.vue'
+import articles from '@/views/articles/articles.vue'
 
 Vue.use(Router)
 
@@ -18,10 +19,16 @@ export default new Router({
       meta:{title:'做个深呼吸，一切没什么大不了'}
     },
     {
-      path: '/document',
-      name: 'document',
-      component: document,
+      path: '/articles',
+      name: 'articles',
+      component: articles,
       meta:{title:'记录下对技术的感悟，解决掉的每个bug，对每个知识点的认知'}
+    },
+    {
+      path: '/bili',
+      name: 'bili',
+      component: bili,
+      meta:{title:'留下你的脚印，告诉我你来过，说说话，聊聊天，交个朋友不枉此生'}
     },
     {
       path: '/product',
