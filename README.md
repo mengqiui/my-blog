@@ -2,6 +2,16 @@
 
 > 记录自己的酸甜苦辣，探讨前端各种技术。
 
+![博客主页](static/img/vueblog-1.0.png "博客首页")
+![博客主页](static/img/vueblog-1.1.png "博客首页")
+
+
+# 技术栈
++ 前端采用：
+vue、vue-router、elementui、scss、svg...
++ 后台采用：
+mongoose、express
+
 
 # 项目目录说明
 
@@ -17,13 +27,6 @@
 4. 调用了三方的天气接口，可以显示访问客户当地近三天天气。
 5. 还在开发中，后面还会有留言板，小聊天室，以及博客后台等等。
 
-![博客主页](static/img/vueblog-1.0.png "博客首页")
-![博客主页](static/img/vueblog-1.1.png "博客首页")
-# 技术栈
-+ 前端采用：
-vue、vue-router、elementui、scss、svg...
-+ 后台采用：
-mongoose、express
 
 
 ## Build Setup
@@ -43,7 +46,9 @@ npm run build --report
 ```
 
 
-纯属工作之余抽时间来一点点开发，到目前为止感觉设计网站是最浪费时间的了，确定下来设计方案开始码代码倒是最爽的了。
++ 纯属工作之余抽时间来开发，暂时只能截图给大家看看，还在开发中。。。
++ 整体页面色调，布局的思考好纠结，设计自己的博客真心操碎了心，啥有趣的功能都想玩一把 ε=(´ο｀*)))
+
 
 
 
