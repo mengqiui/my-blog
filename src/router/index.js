@@ -18,20 +18,13 @@ export default new Router({
       name: 'indexmain',
       component: indexmain,
       meta:{title:'做个深呼吸，一切没什么大不了'},
-      children:{
-        path: '/articleDetail',
-        component: articleDetail
-      }
+
     },
     {
       path: '/articles',
       name: 'articles',
       component: articles,
       meta:{title:'记录下对技术的感悟，解决掉的每个bug，对每个知识点的认知'},
-      children:{
-        path: '/articleDetail',
-        component: articleDetail
-      }
     },
     {
       path: '/bili',
