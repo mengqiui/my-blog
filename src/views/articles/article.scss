@@ -1,0 +1,27 @@
+.article{
+  @include framework();background-color: lightblue;
+  
+  .el-card{background-color: transparent;.el-card__body{padding:10px;}}
+
+
+  .box-card{width:85%;margin-bottom:25px;  background-clip:padding-box,border-box;
+    background-origin:padding-box,border-box;
+    background-image:linear-gradient(45deg,lightblue,#ede387),linear-gradient(45deg,lightblue,#ede387);
+    border:2px transparent solid;background-color:transparent;
+    
+    .imgfill{width:28%;height:220px;vertical-align: top;;
+      
+    }
+    .textlist{display: inline-block;width:70%;
+      .texttitle{
+        // h4{font-size: 20px;font-weight: bold;}
+        // a{color:#333;text-indent:20px;font-size:16px;}
+
+        h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
+        a{-webkit-line-clamp:4;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;line-height: 25px;letter-spacing: .6px;}
+        a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
+        a:hover,a:active,h4:hover,h4:active{color:#333;}
+      }
+    }
+  }
+}

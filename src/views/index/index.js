@@ -27,13 +27,13 @@ export default {
     noticeUpdate(){
       var that = this;
       this.$axios.get(this.HOST + '/getnews').then(res=>{
-        res.data.map((val)=> {that.noticeList.notice.push(val.ncontent);that.noticeList.times.push(val.ndate);})
+        res.data.map((val)=> {that.noticeList.notice.push(val.ncontent);that.noticeList.times.push(val.createdAt);})
         this.timer=setInterval(this.noticeScroll,2000)
       }).catch(err=>{console.log(err)})
     },
     articleData(){
       var that = this;
-      this.$axios.get(this.HOST + '/getArticle').then(res=>{
+      this.$axios.get(this.HOST + '/getArticle?count=3').then(res=>{
         res.data.map((val)=> {that.articleList.push(val);})
       }).catch(err=>{console.log(err)})
     },

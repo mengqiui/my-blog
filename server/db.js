@@ -20,8 +20,8 @@ db.on('connected',function(err){
 
 const newsSchema = new Mongoose.Schema({
   ncontent:String,
-  ndate:{type:Number,default:new Date().getTime()}
-})
+  //ndate:{type:Number,default:new Date().getTime()}
+},{timestamps:true})
 
 const blogSchema = new Mongoose.Schema({
   btype:String,//原创 or 转载
@@ -31,9 +31,9 @@ const blogSchema = new Mongoose.Schema({
   bview:Number,//文章浏览次数
   blabel:[],//文章分类标签
   blike:Number,//文章被点赞数量
-  bctime:{type:Number,default:new Date().getTime()},//文章创建时间
-  bntime:{type:Number,default:new Date().getTime()}//文章更新时间
-})
+  // bctime:{type:Number,default:new Date().getTime()},//文章创建时间
+  // bntime:{type:Number,default:new Date().getTime()}//文章更新时间
+},{timestamps:true})
 
 var news = Mongoose.model('news',newsSchema)
 var article = Mongoose.model('article',blogSchema)

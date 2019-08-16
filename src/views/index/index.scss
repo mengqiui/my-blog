@@ -2,9 +2,11 @@
   position: $postRela; top:$pagetop;left:10%;width:80%;
 }
 // 首页全局重置 卡片 样式
-.el-card{background-color: transparent;.el-card__body{padding:10px;}}
-.bg-index01{position: $postFix;background-color:#41b88361;color:$fc666;width: 100%;height:100%;}
 .index-main{ @include framework(); background-color:lightblue;
+  
+  .el-card{background-color: transparent;.el-card__body{padding:10px;}}
+  .bg-index01{position: $postFix;background-color:#41b88361;color:$fc666;width: 100%;height:100%;}
+
   // 滚动公告
   .notice-item{border:none;background-color: transparent;
     .el-card__body{border: 2px dashed #add8e6;border-radius: 5px;height:20px;position: $postRela;
