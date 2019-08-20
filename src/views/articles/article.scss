@@ -1,27 +1,50 @@
-.article{
-  @include framework();background-color: lightblue;
+.article{@include framework();background-color: lightblue;
   
   .el-card{background-color: transparent;.el-card__body{padding:10px;}}
 
-
-  .box-card{width:85%;margin-bottom:25px;  background-clip:padding-box,border-box;
-    background-origin:padding-box,border-box;
-    background-image:linear-gradient(45deg,lightblue,#ede387),linear-gradient(45deg,lightblue,#ede387);
-    border:2px transparent solid;background-color:transparent;
+  .box-card{width:100%;margin-bottom:25px;height:260px;position: $postRela;background-color:transparent;border:none;cursor: pointer;
     
-    .imgfill{width:28%;height:220px;vertical-align: top;;
+    .cutbox{position: absolute;overflow: hidden;
+      .imgfill{width:28%;height:220px;vertical-align: top;}
+      .cardtype{position: absolute;top:12px;left: -32px;width: 117px;height:30px;z-index: 666;-webkit-transform: rotate(-35deg);transform: rotate(-45deg);
+        text-align: center;font-size: 13px;line-height:30px;font-family: monospace;font-weight: bold;color: #fff;}
+      .original{background-color: $greencol;transition:transform .5s;&:hover{transform:translate3d(10px, 10px, 10px);font-size: 15px;}}
+      .transshipment{background-color:$redcol;transition:transform .5s;&:hover{transform:translate3d(10px, 10px, 10px);font-size: 15px;}}
+      .textlist{width:70%;float:$fr;margin: 0 10px;
+        .texttitle{height:200px;
+          h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
+          a{-webkit-line-clamp:4;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;line-height: 25px;letter-spacing: .6px;}
+          a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
+          a:hover,a:active,h4:hover,h4:active{color:#333;}
+          div{text-indent:16px;margin:15px 0;
+            span{margin-right: 15px;font-size: 10px;color: #fff;padding: 5px 8px;text-transform: uppercase;border-radius: 5px;}
+            .otext{background-color: $greencol;}
+            .ztext{background-color: $redcol;}
+          }
+        }
+        .textdata{color:#777;
+          span{margin:0 8px;
+            i{margin:0 5px;}
+          }
+        }
+      }
       
     }
-    .textlist{display: inline-block;width:70%;
-      .texttitle{
-        // h4{font-size: 20px;font-weight: bold;}
-        // a{color:#333;text-indent:20px;font-size:16px;}
-
-        h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
-        a{-webkit-line-clamp:4;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;line-height: 25px;letter-spacing: .6px;}
-        a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
-        a:hover,a:active,h4:hover,h4:active{color:#333;}
-      }
+    .borderw{position: $postAsol;width:100%;height:2px;transition: all 1s;}
+    .borderh{position: $postAsol;height:100%;width:2px;transition: all 1s;background-color: #d9e2d9;}
+    .btop{top:0;left:92%;}.bleft{top:85%;left:0;}
+    .bbottom{bottom:0;right:92%;}.bright{bottom:85%;right:0;}
+    .bordergreen{background-color: $greencol;}
+    .borderred{background-color: $redcol;}
+    // .btop{top:0;left:92%;border-top: 2px solid #47b8dc;}.bleft{top:70%;left:0;border-left: 2px solid #f0de3a;}
+    // .bbottom{bottom:0;right:92%;border-bottom: 2px solid #47b8dc;}.bright{bottom:70%;right:0;border-right: 2px solid #f0de3a;}
+    &:hover{
+      .btop{top:0;left:0%;}.bbottom{bottom:0;right:0%;}
+      //background-color: rgba(238, 230, 160, 0.36);
+      // .bright{bottom:0%;right:0;}.bleft{top:0%;left:0;}
     }
+  }
+  .el-aside{
+    padding:20px;
   }
 }
