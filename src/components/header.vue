@@ -25,7 +25,11 @@
             <el-menu-item index="/admin">后台入口</el-menu-item>
             <el-menu-item index="7-2">退出</el-menu-item>
           </el-submenu>
-          <el-menu-item class="xshide pull-right"><i class="el-icon-search"></i></el-menu-item>
+          <div class="xshide pull-right headsearch">
+            <el-input placeholder="search..." v-model="headinput">
+              <i slot="suffix" class="el-input__icon el-icon-search"></i>
+            </el-input>
+        </div>
         </el-menu> 
       </el-col>
     </el-row>
@@ -36,7 +40,7 @@
 import mylogo from './mylogo';
   export default {
     data() {
-      return { }
+      return { headinput:'' }
     },
     methods: { },
     created(){ },
@@ -62,6 +66,7 @@ import mylogo from './mylogo';
     .icon-bar {display: block;width: 22px;height: 2px;border-radius: 1px;background-color: #fff;}
     .icon-bar+.icon-bar {margin-top: 4px;}
   }
+
 
   /*屏幕分辨率为小于767px时*/
   @media screen and (max-width: 767px){

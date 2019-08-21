@@ -20,7 +20,7 @@ export default {
 </script>
 <style lang="scss">
   .bg-index01{position: fixed;background-color:#41b88361;color:#666;width: 100%;height:100%;}
-
+  .headsearch{line-height: 60px;.el-input{input{@include input(2px,#fff);}.el-input__suffix{color:#fff;}} }
 </style>
 
 
