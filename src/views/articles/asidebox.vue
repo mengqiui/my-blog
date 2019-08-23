@@ -7,6 +7,9 @@
             <i slot="suffix" class="el-input__icon el-icon-search"></i>
         </el-input>
       </div>
+      <div class="svgtag">
+        <tagcloud></tagcloud>
+      </div>
       <el-card class="newslist" shadow="never">
         <div slot="header"> <span>最新文档</span> </div>
         <div v-for="o in 5" :key="o" class="listitem">{{o}}、列表内容</div>
@@ -16,12 +19,16 @@
   </el-aside>
 </template>
 <script>
+import tagcloud from '../../components/tagcloud';
 export default {
   name:'asidebox',
   data(){
     return {
       searchinput:'',nowdate: new Date(), 
     }
+  },
+  components:{
+    tagcloud
   }
 }
 </script>
@@ -35,6 +42,9 @@ export default {
           @include input(1px,#fff);
         }
         .el-input__suffix{color:#fff;}
+      }
+      .svgtag{margin:20px 0;
+
       }
       .newslist{margin:20px 0;
         .el-card__header{

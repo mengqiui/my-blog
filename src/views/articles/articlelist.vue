@@ -64,11 +64,12 @@ export default {
 </script>
 <style lang="scss" scoped>
   .box-card{width:100%;margin-bottom:25px;height:260px;position: $postRela;background-color:transparent;border:none;cursor: pointer;
-    .cutbox{position: absolute;overflow: hidden;.imgfill{width:28%;height:220px;vertical-align: top;}
-      .cardtype{position: absolute;top:12px;left: -32px;width: 117px;height:30px;z-index: 666;-webkit-transform: rotate(-35deg);transform: rotate(-45deg);
-        text-align: center;font-size: 13px;line-height:30px;font-family: monospace;font-weight: bold;color: #fff;}
-      .original{background-color: $greencol;transition:transform .5s;&:hover{transform:translate3d(10px, 10px, 10px);font-size: 15px;}}
-      .transshipment{background-color:$redcol;transition:transform .5s;&:hover{transform:translate3d(10px, 10px, 10px);font-size: 15px;}}
+    .cutbox{position: absolute;.imgfill{width:28%;height:220px;vertical-align: top;}
+      .cardtype{position: absolute;top:0px;left: -40px;width: 108px;height:30px;z-index: 666;-webkit-transform: rotate(-35deg);transform: rotate(-45deg);transform-origin: center;
+        text-align: center;font-size: 13px;line-height:30px;font-family: monospace;font-weight: bold;color: #fff; box-shadow: -1.204px 1.597px 4px 0 rgba(0,0,0,0.22);
+      }
+      .original{background-color: $greencol;transition:transform .5s;}
+      .transshipment{background-color:$redcol;transition:transform .5s;}
       .textlist{width:70%;float:$fr;margin: 0 10px;
         .texttitle{height:200px;h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
           a{-webkit-line-clamp:3;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;line-height: 25px;letter-spacing: .6px;}
@@ -88,7 +89,7 @@ export default {
     .bordergreen{background-color: $greencol;}
     .borderred{background-color: $redcol;}
 
-    &:hover{.btop{top:0;left:0%;}.bbottom{bottom:0;right:0%;}}
+    &:hover{.btop{top:0;left:0%;}.bbottom{bottom:0;right:0%;}.original,.transshipment{transform:translate3d(10px, 10px, 10px);font-size: 15px;}}
   }
   /*屏幕大于1280px（大屏幕电脑）*/
 @media screen and (min-width: 1280px){
