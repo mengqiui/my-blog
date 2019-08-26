@@ -12,7 +12,7 @@
       </div>
       <el-card class="newslist" shadow="never">
         <div slot="header"> <span>最新文档</span> </div>
-        <div v-for="o in 5" :key="o" class="listitem">{{o}}、列表内容</div>
+        <div v-for="o in 8" :key="o" class="listitem">{{o}}、列表内容</div>
       </el-card>
       <el-calendar v-model="nowdate"></el-calendar>
     </el-card>

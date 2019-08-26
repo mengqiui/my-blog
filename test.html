@@ -249,9 +249,9 @@ h1 {
 
 	function starmove() {
 		for (i = 0; i < aA.length; i++) {
-			// if (aA[i].pause) {
+			if (aA[i].pause) {
 				domove(aA[i]);
-			// }
+			}
 		}
 	}
 
@@ -259,7 +259,7 @@ h1 {
 		//console.log(obj.offsetTop <= -obj.offsetHeight)
 		if (obj.offsetTop <= -obj.offsetHeight) {
 			obj.style.top = oDiv.offsetHeight + "px";
-			// initialize(obj);
+			initialize(obj);
 		} else {
 			obj.style.top = obj.offsetTop - obj.ispeed + "px";
 		}
@@ -279,10 +279,10 @@ h1 {
 		} else {
 			obj.style.left = iLeft + "px";
 		}
-		// clearTimeout(obj.time);
-		// obj.time = setTimeout(function() {
-			// obj.pause = 1;
-		// }, iTimer);
+		clearTimeout(obj.time);
+		obj.time = setTimeout(function() {
+			obj.pause = 1;
+		}, iTimer);
 		obj.ispeed = Math.ceil(Math.random() * 4) + 1;
 	}
 };
