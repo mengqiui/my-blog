@@ -22,7 +22,7 @@
             <div class="content-item" v-for="(list,index) in articleList" :key="index" @click="goDetail(list._id)">
               <el-card shadow="hover" class="item-box textleft" v-if="index == 1">
                 <div class="textlist">
-                  <div class="texttitle"><h4>{{list.btitle}}</h4><a href="javascript:void(0)">{{list.bcontent}}</a></div>
+                  <div class="texttitle"><h4 v-bind:title="list.btitle">{{list.btitle}}</h4><a href="javascript:void(0)">{{list.bcontent}}</a></div>
                 </div>
                 <el-image :src="list.bimage" class="imgfill" style="float:right">
                   <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
@@ -33,7 +33,7 @@
                   <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
                 </el-image>
                 <div class="textlist">
-                  <div class="texttitle"><h4>{{list.btitle}}</h4><a href="javascript:void(0)">{{list.bcontent}}</a> </div>
+                  <div class="texttitle"><h4 v-bind:title="list.btitle">{{list.btitle}}</h4><a href="javascript:void(0)">{{list.bcontent}}</a> </div>
                 </div>
               </el-card>
             </div>

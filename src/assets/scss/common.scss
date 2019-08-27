@@ -19,6 +19,14 @@ $pagetop:81px;
 @mixin framework() {
   position: $postRela; top:$pagetop;left:10%;width:80%;
 }
+@mixin articletitle() {
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: .6px;
+}
 
 // 折角效果样式公用部分
 //https://www.jianshu.com/p/a99764ff3c41
@@ -34,13 +42,13 @@ $pagetop:81px;
 }
 
 
-@mixin input($width,$color) {
-  background-color: transparent;
+@mixin input($width,$color,$textcolor,$bgcolor) {
+  background-color: $bgcolor;
   border: none;
   outline: none;
   border-bottom: $width solid $color;
   border-radius: 0;
-  color: $color;
+  color: $textcolor;
   padding: 5px 8px 0 8px;
   line-height: 34px;
   height: 34px;

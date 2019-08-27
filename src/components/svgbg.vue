@@ -1,6 +1,6 @@
 <template>
   <svg id="mysvg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" >
-    <text :x='item.posX' :y='item.posY' :id="'text'+item.index" :key=" item.index "  @mouseover="textAnimate('text'+item.index)"  v-for=" item in svglist ">{{ item.text }}</text>
+    <text :x='item.posX' :y='item.posY' :id="'text'+item.index" :key=" item.index " @mouseover="textAnimate('text'+item.index)"  v-for=" item in svglist ">{{ item.text }}</text>
   </svg>
 </template>
 
@@ -46,9 +46,9 @@ export default {
     textAnimate:function(elm){var that = this;
       var anmatelist = {
         "go1":function(dom){dom.setAttribute("dx","100");that.setTime(dom,"dx","",2000)},//右移100像素
-        "go2":function(dom){dom.setAttribute("dy","50");that.setTime(dom,"dy","",2000)},//左移100像素
-        "go3":function(dom){dom.setAttribute("transform","rotate(-45 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},//右移100像素
-        "go4":function(dom){dom.setAttribute("transform","rotate(20)");that.setTime(dom,"transform","",2000);},//右移100像素
+        "go2":function(dom){dom.setAttribute("dy","50");that.setTime(dom,"dy","",2000)},//左移50像素
+        "go3":function(dom){dom.setAttribute("transform","rotate(-45 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},
+        "go4":function(dom){dom.setAttribute("transform","rotate(20)");that.setTime(dom,"transform","",2000);},
         "go5":function(dom){//参考https://www.cnblogs.com/xiaohuochai/p/7478261.html
           cancelAnimationFrame(oTimer); oTimer =  requestAnimationFrame(frame);
           var x = [],y = []; var domLength = dom.innerHTML.length , t = 0, oTimer = null;
@@ -61,11 +61,14 @@ export default {
         "go7":function(dom){dom.setAttribute("transform","scale(2, 2) rotate(-1 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",1000);},
         "go8":function(dom){dom.setAttribute("transform","rotate(90 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},
         "go9":function(dom){dom.setAttribute("transform","rotate(90 "+dom.getAttribute('x')+","+dom.getAttribute('y')+")");that.setTime(dom,"transform","",2000);},
+        "go10":function(dom){var posinfo = dom.getBoundingClientRect(); dom.setAttribute("transform","rotate(1800 "+(posinfo.x+Math.round(posinfo.width/2))+","+(posinfo.y+Math.round(posinfo.height/2))+")");
+        //console.log(posinfo,posinfo.x+Math.round(posinfo.width/2),posinfo.y+Math.round(posinfo.height/2))
+        }
       }
       var num = Math.floor((Math.random()*(Object.keys(anmatelist).length))+1);
       var fuc = 'go'+num;
       anmatelist[fuc](document.getElementById(elm));
-      //anmatelist.go7(document.getElementById(elm));
+      // anmatelist.go10(document.getElementById(elm));
 
     }
   }

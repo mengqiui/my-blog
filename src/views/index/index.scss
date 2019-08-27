@@ -63,7 +63,7 @@
             // width:48%;
             display: inline-block;padding:20px 5px;line-height:25px;
             .texttitle{
-              h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
+              h4{font-size:18px;font-weight: 800;margin-bottom:10px;@include articletitle();}
               a{-webkit-line-clamp:3;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;}
               a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
               a:hover,a:active,h4:hover,h4:active{color:#333;}

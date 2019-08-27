@@ -6,6 +6,7 @@
 </template>
  
 <script>
+//操作 DOM 实现
 export default {
   name: 'tagcloud',
   data(){
@@ -40,6 +41,7 @@ export default {
       var rate = Math.random() * 1 + .5 ;// 字体倍率
       var iTimer = parseInt(Math.random() * 1500);
       obj.speed = Math.ceil( Math.random() * 4 ) + 1;// 滚动速度
+      obj.time = null;
       //字体大小
       obj.style.fontSize = 12 * rate + 'px';
      
@@ -51,10 +53,10 @@ export default {
       } else {
         obj.style.left = iLeft + "px";
       }
-      // clearTimeout(obj.time);
-      // obj.time = setTimeout(function() {
+      clearTimeout(obj.time);
+      obj.time = setTimeout(function() {
         obj.isrun = true;
-      // }, iTimer);
+      }, iTimer);
     },
     startmove(){
       var spanTag = document.querySelectorAll('#tagsbox > span');
@@ -83,7 +85,7 @@ export default {
           this.isrun = true;
         };
       });
-      setInterval(this.startmove,50)
+      setInterval(this.startmove,100)
     }
   }
 }
@@ -93,7 +95,7 @@ export default {
 <style lang="scss" scoped>
 #tagsbox{height:260px;margin:20px 0;border:1px solid #fff;padding:5px;position: relative;overflow: hidden;
   .el-tag{cursor: pointer;position: absolute;top:260px;}
-  .el-tag--lightred{background-color: rgba(170, 137, 137, 0.32);color:#f56c6c;border:1px solid rgba(185, 86, 86, 0.2);}
+  .el-tag--lightred{background-color: rgba(170, 137, 137, 0.15);color:#f56c6c;border:1px solid rgba(185, 86, 86, 0.2);}
   .el-tag--lightblue{color:#409EFF;}
 }
 

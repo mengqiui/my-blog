@@ -1,7 +1,7 @@
 <template>
   <el-main>
     <el-card class="box-card" shadow="hover" v-for="(list,index) in articleData" :key="index">
-      <div v-if="list.btype == '原创'">
+      <div v-if="list.btype == '原创'" @click="handleitem(articleData[index])">
         <div class="cutbox">
           <el-image :src="list.bimage" class="imgfill">
             <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
@@ -9,7 +9,7 @@
           <div  class="cardtype original">原创</div>
           <div class="textlist">
             <div class="texttitle">
-              <h4>{{list.btitle}}</h4>
+              <h4 v-bind:title="list.btitle">{{list.btitle}}</h4>
               <div><span v-for="blabel in list.blabel" :key="blabel" class="otext">{{blabel}}</span></div>
               <a href="javascript:void(0)">{{list.bcontent}}</a>
             </div>
@@ -22,7 +22,7 @@
         <div class="borderw btop bordergreen"></div><div class="borderw bbottom bordergreen"></div>
         <div class="borderh bleft"></div><div class="borderh bright"></div>
       </div>
-      <div v-else>
+      <div v-else  @click="handleitem(articleData[index])">
         <div class="cutbox">
           <el-image :src="list.bimage" class="imgfill">
             <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
@@ -30,7 +30,7 @@
           <div class="cardtype transshipment">转载</div>
           <div class="textlist">
             <div class="texttitle">
-              <h4>{{list.btitle}}</h4>
+              <h4 v-bind:title="list.btitle">{{list.btitle}}</h4>
               <div><span v-for="blabel in list.blabel" :key="blabel" class="ztext">{{blabel}}</span></div>
               <a href="javascript:void(0)">{{list.bcontent}}</a>
             </div>
@@ -53,7 +53,9 @@ export default {
     return {articleData:[]}
   },
   methods:{
-
+    handleitem(index){
+      console.log(index)
+    }
   },
   created(){
     this.$axios.get(this.HOST + '/getArticle').then(res=>{
@@ -71,7 +73,7 @@ export default {
       .original{background-color: $greencol;transition:transform .5s;}
       .transshipment{background-color:$redcol;transition:transform .5s;}
       .textlist{width:70%;float:$fr;margin: 0 10px;
-        .texttitle{height:200px;h4{font-size:18px;font-weight: 800;margin-bottom:10px;}
+        .texttitle{height:200px;h4{font-size:18px;font-weight: 800;margin-bottom:10px;@include articletitle();}
           a{-webkit-line-clamp:3;display: -webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow: ellipsis;line-height: 25px;letter-spacing: .6px;}
           a,h4{text-indent:16px;color:$fcmain;cursor: pointer;}//text-indent:16px; a标签该首行缩进属性不管用
           a:hover,a:active,h4:hover,h4:active{color:#333;}
