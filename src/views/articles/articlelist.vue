@@ -1,7 +1,7 @@
 <template>
   <el-main>
     <el-card class="box-card" shadow="hover" v-for="(list,index) in articleData" :key="index">
-      <div v-if="list.btype == '原创'" @click="handleitem(articleData[index])">
+      <div v-if="list.btype == '原创'" @click="handleitem(articleData[index]._id)">
         <div class="cutbox">
           <el-image :src="list.bimage" class="imgfill">
             <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
@@ -22,7 +22,7 @@
         <div class="borderw btop bordergreen"></div><div class="borderw bbottom bordergreen"></div>
         <div class="borderh bleft"></div><div class="borderh bright"></div>
       </div>
-      <div v-else  @click="handleitem(articleData[index])">
+      <div v-else @click="handleitem(articleData[index]._id)">
         <div class="cutbox">
           <el-image :src="list.bimage" class="imgfill">
             <div slot="error" class="image-slot"><i class="el-icon-picture-outline"></i></div>
@@ -54,7 +54,7 @@ export default {
   },
   methods:{
     handleitem(index){
-      console.log(index)
+      this.$router.push({path: 'articles/'+index})
     }
   },
   created(){

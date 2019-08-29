@@ -1,19 +1,14 @@
 <template>
   <el-container class="article">
-    <detail></detail>
-    <!-- <articlelist></articlelist> -->
+     <router-view></router-view>
     <asidebox></asidebox>
   </el-container>
 </template>
 <script>
-import articlelist from './articlelist';
 import asidebox from './asidebox';
-import detail from './articleDetail'
 export default {
   name:'articles',
-  components:{
-    articlelist,asidebox,detail
-  }
+  components:{asidebox},
 }
 </script>
 <style lang="scss" scoped>

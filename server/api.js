@@ -59,7 +59,9 @@ module.exports = function(app){
   })
 // 首页文章列表  Room.find({}).sort({date: 'desc'}).exec(function(err, docs) { ... });
   app.get('/api/getArticle',(req,res)=>{
-    if(req.query.time){
+    if(req.query.id){
+      dbAPI.article.find({}).find({_id:req.query.id}).exec((err, docs)=>{res.send(docs)})
+    }else if(req.query.time){
       dbAPI.article.find({}).sort({updatedAt:req.query.time}).limit(req.query.count?parseInt(req.query.count):'').exec((err, docs)=>{res.send(docs)})
     }else{
       dbAPI.article.find({},(request,result)=>{res.send(result)}).sort({'bview':-1}).limit(req.query.count?parseInt(req.query.count):'')

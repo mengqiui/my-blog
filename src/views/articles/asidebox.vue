@@ -42,8 +42,9 @@ export default {
 <style lang="scss">
 .el-link--head{color: #56595f;}
 .el-link--head:hover{color:#333;text-decoration: none;}
+
 .asideitem{background-color: #ffffff38;
-  .el-card{background-color: transparent;}
+  .el-card{background-color: transparent;border-color:transparent;}
   .asidemod{border:none;background-color: transparent;color:$fcmain;
     .el-card__body{padding:0;
       .searchbox{

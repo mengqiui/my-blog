@@ -25,15 +25,3 @@ body {font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-s
 hr {height: .02rem;margin: .1rem 0;border: medium none;border-top: .02rem solid #cacaca;}
 a {color: #000;text-decoration: none;}
 *{font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;}
-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */ 
-  color:#56595f;
-}
-input::-moz-placeholder { /* Firefox 19+ */  
-  color:#56595f;
-}
-input:-ms-input-placeholder { /* IE 10+ */ 
- color:#56595f;
-}
-input:-moz-placeholder { /* Firefox 18- */ 
- color:#56595f
-}

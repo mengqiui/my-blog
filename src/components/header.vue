@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
           </el-button>
         </div>
-        <el-menu class="xshide" router :default-active="$route.path" mode="horizontal" background-color="#EDE387" text-color="#56595f"  active-text-color="#47b8dc">
+        <el-menu class="xshide" router :default-active="defaultActive" mode="horizontal" background-color="#EDE387" text-color="#56595f" active-text-color="#47b8dc">
           <el-menu-item index="/" class="pchide icontoggle" >
           </el-menu-item>
           <el-menu-item index="/" class="pchide">欢迎来到秋实の博客！！！</el-menu-item>
@@ -38,23 +38,22 @@
 
 <script>
 import mylogo from './mylogo';
-  export default {
-    data() {
-      return { headinput:'' }
-    },
-    methods: { },
-    created(){ },
-    watch: {
-      path(){
-        console.log(this.$router);
+export default {
+  data() { return { headinput:'' } },
+  components:{mylogo: mylogo},
+  computed:{
+    defaultActive(){
+      let activeVal = this.$route.path;
+      let pathArr = this.$route.path.split("/").reverse().filter(d=>d);
+      if(pathArr.length>=2){
+        if(pathArr.includes('articles')){ activeVal = '/articles'; }
+        if(pathArr.includes('product')){ activeVal = '/product'; }
+        if(pathArr.includes('life')){ activeVal = '/life'; }
       }
-      
-      // $route() {
-      //     this.handleSelect(//要高亮的菜单index)
-      // )}
-    },
-    components:{mylogo: mylogo}
+      return activeVal;
+    }
   }
+}
 </script>
 <style lang="scss" scoped >
   .pull-right{float: right;}

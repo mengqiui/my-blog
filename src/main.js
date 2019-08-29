@@ -23,6 +23,10 @@ Vue.prototype.WEATHER = "/resdata"
 Vue.prototype.HOST = "/myblog"
 Vue.prototype.COMMON = global
 
+Vue.filter('formatDate',function(time){
+  var date = new Date(time);
+  return formatDate(date, 'yyyy-MM-dd hh:mm');
+});
 
 /* eslint-disable no-new */
 new Vue({
@@ -33,10 +37,6 @@ new Vue({
   render:h=>h(App)
 });
 
-Vue.filter('formatDate',function(time){
-  var date = new Date(time);
-  return formatDate(date, 'yyyy-MM-dd hh:mm');
-});
 
 router.beforeEach((to,from,next)=>{
   if(to.meta.title){

@@ -12,19 +12,19 @@ export default {
   data(){
     return {
     tags:[
-        { type: 'info', label: 'web' },
+        { type: 'lightblue', label: 'web' },
         { type: 'lightred', label: 'javascript' },
-        { type: 'success', label: 'node.js' },
+        { type: 'leaves', label: 'node.js' },
         { type: 'lightblue', label: 'mongoose' },
-        { type: 'success', label: 'express' },
+        { type: 'leaves', label: 'express' },
         { type: 'info', label: 'koa' },
         { type: 'lightred', label: 'es6' },
-        { type: 'success', label: 'promise' },
+        { type: 'leaves', label: 'promise' },
         { type: 'lightblue', label: 'resolve' },
-        { type: 'success', label: 'request' },
+        { type: 'leaves', label: 'request' },
         { type: 'info', label: 'bootstrap' },
         { type: 'lightred', label: 'nuxt.js' },
-        { type: 'success', label: 'mongoDB' },
+        { type: 'leaves', label: 'mongoDB' },
       ]
     }
   },
@@ -93,10 +93,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#tagsbox{height:260px;margin:20px 0;border:1px solid #fff;padding:5px;position: relative;overflow: hidden;
+#tagsbox{height:260px;margin:20px 0;border:1px solid rgba(142, 206, 142, 0.5);padding:5px;position: relative;overflow: hidden;background-color:rgba(142, 206, 142, 0.5);
   .el-tag{cursor: pointer;position: absolute;top:260px;}
   .el-tag--lightred{background-color: rgba(170, 137, 137, 0.15);color:#f56c6c;border:1px solid rgba(185, 86, 86, 0.2);}
   .el-tag--lightblue{color:#409EFF;}
+  .el-tag--leaves{background-color: rgba(203, 193, 99, 0.24);color:#c9ac19;border:1px solid rgba(209, 190, 21, 0.61);}
 }
 
 </style>

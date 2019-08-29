@@ -1,6 +1,3 @@
-.framework {
-  position: $postRela; top:$pagetop;left:10%;width:80%;
-}
 // 首页全局重置 卡片 样式
 .index-main{ @include framework(); background-color:lightblue;
   
@@ -132,33 +129,28 @@
 
 /*屏幕分辨率为小于767px时*/
 @media screen and (max-width: 767px){
-    .index-main{
-      .index-content{
-        .index-content-middle{
-          .grid{
-            .effect-box{
-              width:$w100;.imgfill{width:$w100;img{width:$w100;}}
+  .index-main{
+    .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);
+      .index-content-middle{
+        .grid{
+          .effect-box{
+            width:$w100;.imgfill{width:$w100;img{width:$w100;}}
+          }
+        }
+        .content-item{
+          .item-box{
+            .imgfill{width: 50%;
+              img{height:180px;}
+            }
+            .textlist{
+              width:46%;
             }
           }
         }
       }
-      .el-aside{
-        display: none;
-      }
     }
- 
-  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
-    .index-content-middle{
-      .content-item{
-        .item-box{
-          .imgfill{width: 50%;
-            img{height:180px;}
-          }
-          .textlist{
-            width:46%;
-          }
-        }
-      }
+    .el-aside{
+      display: none;
     }
   }
 }
@@ -180,22 +172,24 @@
 
 /*屏幕大于1280px（大屏幕电脑）*/
 @media screen and (min-width: 1280px){
-  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
-    .index-content-middle{
-      .content-item{
-        .item-box{
-          .imgfill{width:50%;
-            img{height:150px;}
-          }
-          .textlist{
-            width:46%;
+  .index-main{
+    .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+      .index-content-middle{
+        .content-item{
+          .item-box{
+            .imgfill{width:50%;
+              img{height:150px;}
+            }
+            .textlist{
+              width:46%;
+            }
           }
         }
       }
     }
-  }
-  .el-aside{
-    width: 350px !important;padding:20px 20px 0 0;
+    .el-aside{
+      width: 350px !important;padding:20px 20px 0 0;
+    }
   }
 }
 
@@ -203,36 +197,40 @@
 
 /*最小屏幕分辨率为1280px且最大为1440px*/
 @media (max-width:1440px) and (min-width: 1280px) {
-  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
-    .index-content-middle{
-      .content-item{margin:40px auto;
-        .item-box{
-          .imgfill{
-            img{height:150px;}
-          }
-          .textlist{
-            width:46%;padding:10px 5px!important;
+  .index-main{
+    .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+      .index-content-middle{
+        .content-item{margin:40px auto;
+          .item-box{
+            .imgfill{
+              img{height:150px;}
+            }
+            .textlist{
+              width:46%;padding:10px 5px!important;
+            }
           }
         }
       }
     }
-  }
-  .el-aside{
-    width: 350px !important;padding:20px 20px 0 0;
+    .el-aside{
+      width: 350px !important;padding:20px 20px 0 0;
+    }
   }
 }
 
 /*最小屏幕分辨率为1440px且最大为1680px*/
 @media (max-width:1680px) and (min-width: 1439px) {
-  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
-    .index-content-middle{
-      .content-item{
-        .item-box{
-          .imgfill{
-            img{height:230px;}
-          }
-          .textlist{
-            width:46%;
+  .index-main{
+    .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+      .index-content-middle{
+        .content-item{
+          .item-box{
+            .imgfill{
+              img{height:230px;}
+            }
+            .textlist{
+              width:46%;
+            }
           }
         }
       }
@@ -242,22 +240,24 @@
 
 /*最小屏幕分辨率为1920px*/
 @media screen and (min-width:1920px){
-  .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
-    .index-content-middle{
-      .content-item{
-        .item-box{
-          .imgfill{
-            img{height:230px;}
-          }
-          .textlist{
-            width:46%;
+  .index-main{
+    .index-content{background-image: linear-gradient(to right,#d4dc96 50%, #b6e3cf 50%);    
+      .index-content-middle{
+        .content-item{
+          .item-box{
+            .imgfill{
+              img{height:230px;}
+            }
+            .textlist{
+              width:46%;
+            }
           }
         }
       }
     }
-  }
-  .el-aside{
-    width: 350px !important;padding:20px 20px 0 0;
+    .el-aside{
+      width: 350px !important;padding:20px 20px 0 0;
+    }
   }
 }
 
