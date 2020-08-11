@@ -2,7 +2,7 @@
 // const mynews = [{ news_content:'秋の博客a.0版本上线啦~~~',news_time:Date.now() },{ news_content:'秋の博客c.0版本上线啦~~~',news_time:Date.now() }];
 
 const Mongoose = require('mongoose')
-Mongoose.connect('mongodb://localhost:27017/myblog',{useNewUrlParser:true})
+Mongoose.connect('mongodb://localhost:27017/myblog',{useNewUrlParser:true,useUnifiedTopology:true})
 const db = Mongoose.connection;
 
 db.on('error',function(error){

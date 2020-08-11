@@ -70,7 +70,24 @@ $pagetop:81px;
   }
 }
 
-
+/*bounce(动画)*/
+.bounce-enter-active {
+  animation: bounce-in 5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 1s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(10);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 // xs	<768px 响应式栅格数或者栅格属性对象	number/object (例如： {span: 4, offset: 4})	—	—
 // sm	≥768px 响应式栅格数或者栅格属性对象	number/object (例如： {span: 4, offset: 4})	—	—

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import life from '@/views/life'
 import photo from '@/views/photo'
 import admin from '@/views/admin'
-import bili from '@/views/bili'
+import bili from '@/views/bilibili/bili'
 import indexmain from '@/views/index/index.vue'
 import product from '@/views/product/product.vue'
 import articles from '@/views/articles/articles.vue'
@@ -24,7 +24,6 @@ export default new Router({
     },
     {
       path: '/articles',
-      name: 'articles',
       component: articles,
       meta:{title:'记录下对技术的感悟，解决掉的每个bug，对每个知识点的认知'},
       children:[

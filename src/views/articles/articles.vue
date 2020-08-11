@@ -1,6 +1,8 @@
 <template>
   <el-container class="article">
+    <transition name='fade'>
      <router-view></router-view>
+    </transition>
     <asidebox></asidebox>
   </el-container>
 </template>

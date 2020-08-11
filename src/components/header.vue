@@ -45,6 +45,7 @@ export default {
     defaultActive(){
       let activeVal = this.$route.path;
       let pathArr = this.$route.path.split("/").reverse().filter(d=>d);
+      
       if(pathArr.length>=2){
         if(pathArr.includes('articles')){ activeVal = '/articles'; }
         if(pathArr.includes('product')){ activeVal = '/product'; }

@@ -2,7 +2,9 @@
   <div id="app">
     <headbox></headbox>
     <div class="bg-index01"><svgbg></svgbg></div>
-    <router-view/>
+    <transition name='fade'>
+      <router-view/>
+    </transition>
     <foot></foot>
   </div>
 </template>
